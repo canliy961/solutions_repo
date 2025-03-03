@@ -1,0 +1,48 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOQohHTrsXi5HzOpaFvKKnV",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/canliy961/solutions_repo/blob/main/solutions_repo/docs/1_Physics/1_Mechanics\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### 1. Mechanics\n"
+      ],
+      "metadata": {
+        "id": "a3apA5FOfgZE"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Gravity"
+      ],
+      "metadata": {
+        "id": "Xwhioxo5fkED"
+      }
+    }
+  ]
+}
