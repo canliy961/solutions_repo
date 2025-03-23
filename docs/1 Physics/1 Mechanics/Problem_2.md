@@ -131,3 +131,6 @@ plt.ylabel('Angle (θ)')
 plt.title('Forced Damped Pendulum Motion')
 plt.grid(True)
 plt.show()
+```
+
+asdasd
