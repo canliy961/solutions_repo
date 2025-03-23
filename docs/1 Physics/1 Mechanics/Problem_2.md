@@ -133,4 +133,72 @@ plt.grid(True)
 plt.show()
 ```
 
-asdasd
+### 4.2 Phase Space and Poincaré Section
+
+To investigate chaotic dynamics in the forced damped pendulum, we visualize the motion using:
+
+- **Phase Space:** Plot of $\theta$ vs $\frac{d\theta}{dt}$
+- **Poincaré Section:** Discrete samples of the system at each driving period
+
+Let the driving period be:
+
+$$
+T = \frac{2\pi}{\omega}
+$$
+
+We sample the pendulum state $(\theta, \dot{\theta})$ at times $t = nT$.
+
+```python
+# Phase space and Poincaré section for forced damped pendulum
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Parameters
+g = 9.81
+L = 1.0
+b = 0.5
+A = 1.2
+omega = 2 / 3
+
+def pendulum(t, y):
+    theta, omega_theta = y
+    dtheta_dt = omega_theta
+    domega_dt = -b * omega_theta - (g / L) * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, domega_dt]
+
+# Initial condition and time settings
+y0 = [0.2, 0.0]
+t_span = (0, 100)
+t_eval = np.linspace(*t_span, 10000)
+
+# Solve the differential equation
+sol = solve_ivp(pendulum, t_span, y0, t_eval=t_eval, dense_output=True)
+
+# --- Phase Space Plot ---
+plt.figure(figsize=(6, 6))
+plt.plot(sol.y[0], sol.y[1], linewidth=0.5)
+plt.xlabel('θ')
+plt.ylabel('dθ/dt')
+plt.title('Phase Space')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# --- Poincaré Section ---
+T_drive = 2 * np.pi / omega
+times = np.arange(0, t_span[1], T_drive)
+poincare_points = [sol.sol(t) for t in times if t < sol.t[-1]]
+poincare_theta = [pt[0] % (2 * np.pi) for pt in poincare_points]
+poincare_omega = [pt[1] for pt in poincare_points]
+
+plt.figure(figsize=(6, 6))
+plt.scatter(poincare_theta, poincare_omega, s=1)
+plt.xlabel('θ (mod 2π)')
+plt.ylabel('dθ/dt')
+plt.title('Poincaré Section')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
