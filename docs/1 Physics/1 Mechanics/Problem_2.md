@@ -202,3 +202,47 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+
+### 4.3 Bifurcation Diagram (Optional Extension)
+
+You can create a **bifurcation diagram** by sweeping a parameter (e.g., the driving amplitude $A$) and recording the **Poincaré points** after transient behavior has decayed. This helps visualize the transition from regular to chaotic motion.
+
+Steps:
+
+1. Vary the driving amplitude $A$ across a specified range.
+2. For each value of $A$, simulate the system for long enough to allow transients to die out.
+3. Sample the system at multiples of the driving period $T = \frac{2\pi}{\omega}$.
+4. Plot $\theta$ (or $\theta \mod 2\pi$) versus $A$ using the resulting Poincaré points.
+
+The bifurcation diagram shows how the qualitative nature of the solution (periodic, quasiperiodic, chaotic) changes as $A$ increases.
+
+---
+
+### 5. Limitations and Extensions
+
+#### Assumptions
+
+- Rigid pendulum with constant length
+- Sinusoidal external driving force
+- Constant (linear) damping coefficient
+- Single degree of freedom (1D angular motion)
+
+#### Extensions
+
+- Nonlinear or velocity-squared damping models
+- Non-sinusoidal or stochastic (random) forcing terms
+- Coupled pendulum systems (e.g., double pendulum)
+- 2D or 3D pendulum models with richer dynamics
+- Systems with time-varying mass or length (e.g., swinging ropes or cranes)
+
+---
+
+### Summary of Deliverables
+
+- Python simulation of forced damped pendulum motion
+- Plots of angular displacement over time
+- Phase space plots illustrating the dynamic behavior
+- Poincaré sections highlighting transitions to chaos
+- Analytical derivation under the small-angle approximation
+- Resonance condition and response amplitude curve
+- Discussion of real-world analogs and suggestions for model extensions
