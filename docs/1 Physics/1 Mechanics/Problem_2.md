@@ -216,33 +216,3 @@ Steps:
 
 The bifurcation diagram shows how the qualitative nature of the solution (periodic, quasiperiodic, chaotic) changes as $A$ increases.
 
----
-
-### 5. Limitations and Extensions
-
-#### Assumptions
-
-- Rigid pendulum with constant length
-- Sinusoidal external driving force
-- Constant (linear) damping coefficient
-- Single degree of freedom (1D angular motion)
-
-#### Extensions
-
-- Nonlinear or velocity-squared damping models
-- Non-sinusoidal or stochastic (random) forcing terms
-- Coupled pendulum systems (e.g., double pendulum)
-- 2D or 3D pendulum models with richer dynamics
-- Systems with time-varying mass or length (e.g., swinging ropes or cranes)
-
----
-
-### Summary of Deliverables
-
-- Python simulation of forced damped pendulum motion
-- Plots of angular displacement over time
-- Phase space plots illustrating the dynamic behavior
-- Poincaré sections highlighting transitions to chaos
-- Analytical derivation under the small-angle approximation
-- Resonance condition and response amplitude curve
-- Discussion of real-world analogs and suggestions for model extensions
