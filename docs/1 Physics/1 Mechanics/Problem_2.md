@@ -203,16 +203,3 @@ plt.tight_layout()
 plt.show()
 ```
 
-### 4.3 Bifurcation Diagram (Optional Extension)
-
-You can create a **bifurcation diagram** by sweeping a parameter (e.g., the driving amplitude $A$) and recording the **Poincaré points** after transient behavior has decayed. This helps visualize the transition from regular to chaotic motion.
-
-Steps:
-
-1. Vary the driving amplitude $A$ across a specified range.
-2. For each value of $A$, simulate the system for long enough to allow transients to die out.
-3. Sample the system at multiples of the driving period $T = \frac{2\pi}{\omega}$.
-4. Plot $\theta$ (or $\theta \mod 2\pi$) versus $A$ using the resulting Poincaré points.
-
-The bifurcation diagram shows how the qualitative nature of the solution (periodic, quasiperiodic, chaotic) changes as $A$ increases.
-
