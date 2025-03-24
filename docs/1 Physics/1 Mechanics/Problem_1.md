@@ -133,3 +133,9 @@ plt.show()
 # - Add air resistance using a velocity-dependent drag force and solve numerically.
 # - Modify equations for projectiles launched from or landing on different elevations.
 # - Introduce wind by including horizontal acceleration terms.
+```
+![alt text](image.png)
+
+### My Colab (canliy961)
+
+[Projectile Range vs Angle of Projection](https://colab.research.google.com/drive/1zub6JQdK1DkVS4CyWHUYSn65Y6caYdtk?usp=sharing)
