@@ -136,6 +136,6 @@ plt.show()
 ```
 ![alt text](image.png)
 
-### My Colab (canliy961)
+### My Colab (Canliy961)
 
 [Projectile Range vs Angle of Projection](https://colab.research.google.com/drive/1zub6JQdK1DkVS4CyWHUYSn65Y6caYdtk?usp=sharing)
