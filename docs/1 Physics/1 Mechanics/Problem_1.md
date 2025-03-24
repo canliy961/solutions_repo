@@ -5,7 +5,7 @@
 
 ### 1.1 Equations of Motion
 
-Assuming an idealized system with no air resistance and where the projectile is launched from and lands at the same vertical level, the equations of motion can be derived from Newton’s laws:
+Assuming an idealized system with no air resistance and where the projectile is launched from and lands at the same vertical level, the equations of motion can be derived from Newton’s laws: 
 
 **Horizontal motion (constant velocity):**
 
