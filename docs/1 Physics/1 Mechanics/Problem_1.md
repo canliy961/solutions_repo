@@ -134,8 +134,91 @@ plt.show()
 # - Modify equations for projectiles launched from or landing on different elevations.
 # - Introduce wind by including horizontal acceleration terms.
 ```
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g = 9.81  # gravity (m/s^2)
+angles_deg = [15, 30, 45, 60, 75]  # angles for (a)
+velocities = [10, 15, 20, 25, 30]  # velocities for (b)
+fixed_velocity = 20
+fixed_angle_deg = 45
+
+def compute_trajectory(v0, angle_deg, g=9.81, air_resistance=False, k=0.1, m=1.0):
+    theta = np.radians(angle_deg)
+    vx0 = v0 * np.cos(theta)
+    vy0 = v0 * np.sin(theta)
+
+    if not air_resistance:
+        t_flight = 2 * vy0 / g
+        t = np.linspace(0, t_flight, 300)
+        x = vx0 * t
+        y = vy0 * t - 0.5 * g * t**2
+    else:
+        # Simplified numerical solution using Euler method
+        dt = 0.01
+        t, x, y = [0], [0], [0]
+        vx, vy = vx0, vy0
+        while y[-1] >= 0:
+            v = np.sqrt(vx**2 + vy**2)
+            ax = -k * v * vx / m
+            ay = -g - (k * v * vy / m)
+            vx += ax * dt
+            vy += ay * dt
+            x.append(x[-1] + vx * dt)
+            y.append(y[-1] + vy * dt)
+            t.append(t[-1] + dt)
+        t = np.array(t)
+        x = np.array(x)
+        y = np.array(y)
+    return x, y
+
+# Create subplots
+fig, axs = plt.subplots(3, 1, figsize=(10, 18))
+
+# a) Same velocity, different angles
+for angle in angles_deg:
+    x, y = compute_trajectory(fixed_velocity, angle)
+    axs[0].plot(x, y, label=f"{angle}°")
+axs[0].set_title("a) Same Velocity, Different Angles")
+axs[0].set_xlabel("Distance (m)")
+axs[0].set_ylabel("Height (m)")
+axs[0].legend()
+axs[0].grid(True)
+
+# b) Same angle, different velocities
+for v in velocities:
+    x, y = compute_trajectory(v, fixed_angle_deg)
+    axs[1].plot(x, y, label=f"{v} m/s")
+axs[1].set_title("b) Same Angle, Different Velocities")
+axs[1].set_xlabel("Distance (m)")
+axs[1].set_ylabel("Height (m)")
+axs[1].legend()
+axs[1].grid(True)
+
+# c) With vs Without Air Resistance
+x_no_air, y_no_air = compute_trajectory(fixed_velocity, fixed_angle_deg, air_resistance=False)
+x_air, y_air = compute_trajectory(fixed_velocity, fixed_angle_deg, air_resistance=True)
+axs[2].plot(x_no_air, y_no_air, label="No Air Resistance")
+axs[2].plot(x_air, y_air, label="With Air Resistance")
+axs[2].set_title("c) Air Resistance Effect")
+axs[2].set_xlabel("Distance (m)")
+axs[2].set_ylabel("Height (m)")
+axs[2].legend()
+axs[2].grid(True)
+
+plt.tight_layout()
+plt.show()
+```
+
 ![alt text](image.png)
+
+![alt text](image-1.png)
 
 ## My Colab (Canliy961)
 
 [Projectile Range vs Angle of Projection](https://colab.research.google.com/drive/1zub6JQdK1DkVS4CyWHUYSn65Y6caYdtk?usp=sharing)
+
+[Air Resistance](https://colab.research.google.com/drive/1-LY1_obgdUI8-Xdt-vc6DoB6PndG1GYe)
