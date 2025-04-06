@@ -132,6 +132,7 @@ plt.title('Forced Damped Pendulum Motion')
 plt.grid(True)
 plt.show()
 ```
+![alt text](image-4.png)
 
 ### 4.2 Phase Space and Poincaré Section
 
@@ -202,4 +203,6 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+## My Colab (Canliy961)
 
+[Forced Damped Pendulum Motion](https://colab.research.google.com/drive/1ChCV0WpqC_N0MRDeVVmX-RlVBk-q18iC?usp=sharing)
