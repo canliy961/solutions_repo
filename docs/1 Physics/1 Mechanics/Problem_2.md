@@ -205,7 +205,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![alt text](image-6.png)
+![alt text](image-7.png)
 
 ## My Colab (Canliy961)
 
