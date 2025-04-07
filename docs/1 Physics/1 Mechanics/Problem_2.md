@@ -135,6 +135,8 @@ plt.show()
 
 ![alt text](image-4.png)
 
+![alt text](image-10.png)
+
 ### 4.2 Phase Space and Poincaré Section
 
 To investigate chaotic dynamics in the forced damped pendulum, we visualize the motion using:
@@ -207,10 +209,14 @@ plt.show()
 
 ![alt text](image-7.png)
 
-![alt text](image-8.png)
+![alt text](image-9.png)
 
 ## My Colab (Canliy961)
 
 [Forced Damped Pendulum Motion](https://colab.research.google.com/drive/1ChCV0WpqC_N0MRDeVVmX-RlVBk-q18iC?usp=sharing)
 
-[Phase Space & Poincaré Section](https://colab.research.google.com/drive/1iAJC5e2gNESfR7MB-qOPk4mYQdAPPUDj?usp=sharing)
+[Phase Space of Pendulum Scenarios](https://colab.research.google.com/drive/1_u0mcVN_HA9ENFffx2uQEh5z8ottTHjK)
+
+[Phase Space](https://colab.research.google.com/drive/1iAJC5e2gNESfR7MB-qOPk4mYQdAPPUDj?usp=sharing)
+
+[Comparison of Pendulum Scenarios](https://colab.research.google.com/drive/1asmixWNaoVuzKnS9TqtYmh1wxVLSz72f)
