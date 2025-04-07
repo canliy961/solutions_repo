@@ -211,6 +211,10 @@ plt.show()
 
 ![alt text](image-9.png)
 
+![alt text](image-11.png)
+
+![alt text](image-12.png)
+
 ## My Colab (Canliy961)
 
 [Forced Damped Pendulum Motion](https://colab.research.google.com/drive/1ChCV0WpqC_N0MRDeVVmX-RlVBk-q18iC?usp=sharing)
@@ -220,3 +224,5 @@ plt.show()
 [Phase Space](https://colab.research.google.com/drive/1iAJC5e2gNESfR7MB-qOPk4mYQdAPPUDj?usp=sharing)
 
 [Comparison of Pendulum Scenarios](https://colab.research.google.com/drive/1asmixWNaoVuzKnS9TqtYmh1wxVLSz72f)
+
+[Pendulum](https://colab.research.google.com/drive/1u9819xkIKfu5L6UX-P2VBGwM9de2E4zr#scrollTo=sAfOZ1RUiXth)
