@@ -48,9 +48,75 @@ $T^2 \propto r^3$
 - **Satellite Orbit Design:**  
   Used to determine the correct altitude for geosynchronous orbits.
 
-![alt text](image-3.png)
+### Newton’s Form of Kepler’s Third Law
 
-![alt text](image-4.png)
+Newton's version of Kepler’s Third Law is:
+
+$$
+T^2 = \frac{4\pi^2 r^3}{G M}
+$$
+
+Where:
+- $T$ is the orbital period (in seconds)  
+- $r$ is the orbital radius (in meters)  
+- $G$ is the gravitational constant, approximately $6.674 \times 10^{-11} \ \text{m}^3 \ \text{kg}^{-1} \ \text{s}^{-2}$  
+- $M$ is the mass of the central object (Earth or Sun)
+
+---
+
+### 2.1 Mass of the Earth (using the Moon's orbit)
+
+Given:
+- $T = 27.3$ days $= 2.36 \times 10^6$ s  
+- $r = 3.84 \times 10^8$ m
+
+From the formula:
+
+$$
+M = \frac{4\pi^2 r^3}{G T^2}
+$$
+
+Substitute the values:
+
+$$
+M = \frac{4\pi^2 (3.84 \times 10^8)^3}{6.674 \times 10^{-11} (2.36 \times 10^6)^2}
+$$
+
+Result:
+
+$$
+M \approx 5.97 \times 10^{24} \ \text{kg}
+$$
+
+ This is the **mass of the Earth**.
+
+---
+
+###  2.2 Mass of the Sun (using Earth's orbit)
+
+Given:
+- $T = 1$ year $= 3.156 \times 10^7$ s  
+- $r = 1.496 \times 10^{11}$ m
+
+Apply the same formula:
+
+$$
+M = \frac{4\pi^2 r^3}{G T^2}
+$$
+
+Substitute the values:
+
+$$
+M = \frac{4\pi^2 (1.496 \times 10^{11})^3}{6.674 \times 10^{-11} (3.156 \times 10^7)^2}
+$$
+
+Result:
+
+$$
+M \approx 1.99 \times 10^{30} \ \text{kg}
+$$
+
+ This is the **mass of the Sun**.
 
 ---
 
@@ -135,4 +201,4 @@ This allows for broader applications, including comets, exoplanets, and binary s
 
 ## My Colab (Canliy961)
 
-[Orbital & Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
+[Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
