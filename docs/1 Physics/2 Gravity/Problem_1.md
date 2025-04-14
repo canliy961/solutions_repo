@@ -135,4 +135,4 @@ This allows for broader applications, including comets, exoplanets, and binary s
 
 ## My Colab (Canliy961)
 
-[Orbital Radius & Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
+[Orbital & Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
