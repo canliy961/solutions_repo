@@ -228,20 +228,12 @@ plt.tight_layout()
 plt.show()
 ```
 
-![alt text](image-12.png)
-
 ![alt text](image-13.png)
+
+![alt text](image-12.png)
 
 ## My Colab (Canliy961)
 
 [Pendulum Scenarios](https://colab.research.google.com/drive/1_u0mcVN_HA9ENFffx2uQEh5z8ottTHjK#scrollTo=D0hAgP4Uo88v)
 
-[Forced Damped Pendulum Motion](https://colab.research.google.com/drive/1ChCV0WpqC_N0MRDeVVmX-RlVBk-q18iC?usp=sharing)
-
-[Phase Space of Pendulum Scenarios](https://colab.research.google.com/drive/1_u0mcVN_HA9ENFffx2uQEh5z8ottTHjK)
-
-[Phase Space](https://colab.research.google.com/drive/1iAJC5e2gNESfR7MB-qOPk4mYQdAPPUDj?usp=sharing)
-
-[Comparison of Pendulum Scenarios](https://colab.research.google.com/drive/1asmixWNaoVuzKnS9TqtYmh1wxVLSz72f)
-
-[Pendulum](https://colab.research.google.com/drive/1u9819xkIKfu5L6UX-P2VBGwM9de2E4zr#scrollTo=sAfOZ1RUiXth)
+[Pendulum](https://colab.research.google.com/drive/1ti375YL-PxkaXf5bHPbPtvXnDWc8sfNc#scrollTo=PWnFqs7uqgOu)
