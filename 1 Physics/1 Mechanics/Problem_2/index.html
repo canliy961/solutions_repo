@@ -252,36 +252,45 @@
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
-# Parameters
-g = 9.81
-L = 1.0
-b = 0.5
-A = 1.2
-omega = 2/3
-
-def pendulum(t, y):
+# Pendulum differential equation
+def pendulum(t, y, b, A, omega):
     theta, omega_theta = y
-    dtheta_dt = omega_theta
-    domega_dt = -b * omega_theta - (g / L) * np.sin(theta) + A * np.cos(omega * t)
-    return [dtheta_dt, domega_dt]
+    dydt = [omega_theta, -b * omega_theta - np.sin(theta) + A * np.cos(omega * t)]
+    return dydt
 
-# Initial condition
-y0 = [0.2, 0.0]
+# Time span and evaluation points
+t_span = (0, 20)
+t_eval = np.linspace(*t_span, 1000)
 
-# Time span
-t_span = (0, 100)
-t_eval = np.linspace(*t_span, 10000)
+# Initial conditions: small angle, zero initial velocity
+y0 = [0.2, 0]
 
-# Solve
-sol = solve_ivp(pendulum, t_span, y0, t_eval=t_eval)
+# Define different scenarios
+scenarios = {
+    "Pure Pendulum": {"b": 0.0, "A": 0.0, "omega": 0.0},
+    "Damped Pendulum": {"b": 0.5, "A": 0.0, "omega": 0.0},
+    "Driven Pendulum": {"b": 0.0, "A": 1.2, "omega": 2.0},
+    "Damped Driven (1)": {"b": 0.5, "A": 1.2, "omega": 2.0},
+    "Damped Driven (2)": {"b": 0.2, "A": 0.8, "omega": 1.5}
+}
 
-# Plot angular displacement
-plt.figure(figsize=(10, 4))
-plt.plot(sol.t, sol.y[0])
-plt.xlabel('Time')
-plt.ylabel('Angle (θ)')
-plt.title('Forced Damped Pendulum Motion')
+# Solve the ODEs
+results = {}
+for name, params in scenarios.items():
+    sol = solve_ivp(pendulum, t_span, y0, args=(params["b"], params["A"], params["omega"]), t_eval=t_eval)
+    results[name] = sol
+
+# Plot phase space
+plt.figure(figsize=(12, 8))
+for name, sol in results.items():
+    plt.plot(sol.y[0], sol.y[1], label=name)
+
+plt.title("Phase Space of Pendulum Scenarios")
+plt.xlabel("Angle θ (rad)")
+plt.ylabel("Angular Velocity ω (rad/s)")
+plt.legend()
 plt.grid(True)
+plt.tight_layout()
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-11.png"/></p>
