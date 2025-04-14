@@ -38,6 +38,7 @@ $T^2 \propto r^3$
 
 - **Planetary Mass Determination:**  
   If you know a moon's orbit ($T$, $r$), you can calculate the mass of the planet using:  
+  
   $$
   M = \frac{4\pi^2 r^3}{G T^2}
   $$
