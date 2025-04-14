@@ -234,6 +234,6 @@ plt.show()
 
 ## My Colab (Canliy961)
 
-[Pendulum Scenarios](https://colab.research.google.com/drive/1_u0mcVN_HA9ENFffx2uQEh5z8ottTHjK#scrollTo=D0hAgP4Uo88v)
+[Pendulum Scenarios](https://colab.research.google.com/drive/1_u0mcVN_HA9ENFffx2uQEh5z8ottTHjK#scrollTo=D0hAgP4Uo88v) Plots1&2&3
 
-[Pendulum](https://colab.research.google.com/drive/1ti375YL-PxkaXf5bHPbPtvXnDWc8sfNc#scrollTo=PWnFqs7uqgOu)
+[Pendulum](https://colab.research.google.com/drive/1ti375YL-PxkaXf5bHPbPtvXnDWc8sfNc#scrollTo=PWnFqs7uqgOu) Plots4&5
