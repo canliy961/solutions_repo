@@ -172,6 +172,108 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="keplers-third-law-orbital-period-and-orbital-radius">Kepler’s Third Law: Orbital Period and Orbital Radius</h1>
+<h2 id="1-theoretical-derivation">1. Theoretical Derivation</h2>
+<p><strong>Kepler’s Third Law (Simplified for Circular Orbits)</strong></p>
+<p>For a body in a circular orbit around a much more massive body, the gravitational force provides the necessary centripetal force:</p>
+<ul>
+<li>
+<p>Gravitational Force:<br/>
+<span class="arithmatex">\(F_{\text{gravity}} = \frac{G M m}{r^2}\)</span></p>
+</li>
+<li>
+<p>Centripetal Force:<br/>
+<span class="arithmatex">\(F_{\text{centripetal}} = \frac{m v^2}{r}\)</span></p>
+</li>
+</ul>
+<p>Equating both forces:</p>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = \frac{m v^2}{r} \Rightarrow v^2 = \frac{G M}{r}
+\]</div>
+<p>Orbital period <span class="arithmatex">\(T\)</span> is related to velocity <span class="arithmatex">\(v\)</span> and radius <span class="arithmatex">\(r\)</span>:</p>
+<div class="arithmatex">\[
+v = \frac{2\pi r}{T} \Rightarrow \left( \frac{2\pi r}{T} \right)^2 = \frac{G M}{r}
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \frac{4\pi^2 r^2}{T^2} = \frac{G M}{r} \Rightarrow T^2 = \frac{4\pi^2 r^3}{G M}
+\]</div>
+<p>✅ <strong>Kepler’s Third Law:</strong><br/>
+<span class="arithmatex">\(T^2 \propto r^3\)</span></p>
+<hr/>
+<h2 id="2-astronomical-implications">2. Astronomical Implications</h2>
+<ul>
+<li>
+<p><strong>Planetary Mass Determination:</strong><br/>
+  If you know a moon's orbit (<span class="arithmatex">\(T\)</span>, <span class="arithmatex">\(r\)</span>), you can calculate the mass of the planet using:<br/>
+  $$
+  M = \frac{4\pi^2 r^3}{G T^2}
+  $$</p>
+</li>
+<li>
+<p><strong>Interplanetary Distance:</strong><br/>
+  Comparing periods and distances of planets allows relative distances from the Sun to be calculated without direct measurements.</p>
+</li>
+<li>
+<p><strong>Satellite Orbit Design:</strong><br/>
+  Used to determine the correct altitude for geosynchronous orbits.</p>
+</li>
+</ul>
+<hr/>
+<h2 id="3-real-world-examples">3. Real-World Examples</h2>
+<h3 id="example-1-the-moon-orbiting-earth">Example 1: The Moon Orbiting Earth</h3>
+<ul>
+<li>Radius: <span class="arithmatex">\(r \approx 3.84 \times 10^8 \ \text{m}\)</span> </li>
+<li>Period: <span class="arithmatex">\(T \approx 27.3 \ \text{days} \approx 2.36 \times 10^6 \ \text{s}\)</span></li>
+</ul>
+<p>Using Kepler’s law, we can estimate Earth’s mass.</p>
+<h3 id="example-2-solar-system-planets">Example 2: Solar System Planets</h3>
+<p>By plotting <span class="arithmatex">\(\log(T)\)</span> vs. <span class="arithmatex">\(\log(r)\)</span> for planets, we should get a straight line with slope <span class="arithmatex">\(\approx 1.5\)</span>.</p>
+<hr/>
+<h2 id="4-computational-simulation">4. Computational Simulation</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant
+M = 1.989e30     # Mass of the Sun (kg)
+
+# Orbital radii (m) - approximate average values
+radii = np.array([
+    5.79e10,  # Mercury
+    1.08e11,  # Venus
+    1.50e11,  # Earth
+    2.28e11,  # Mars
+    7.78e11,  # Jupiter
+    1.43e12,  # Saturn
+    2.87e12,  # Uranus
+    4.50e12   # Neptune
+])
+
+# Compute periods using Kepler's Third Law
+T = np.sqrt((4 * np.pi**2 * radii**3) / (G * M))
+
+# Plot log(T) vs log(r)
+plt.figure(figsize=(8,6))
+plt.plot(np.log10(radii), np.log10(T), 'o-')
+plt.xlabel("log10(Orbital Radius) [log10(m)]")
+plt.ylabel("log10(Orbital Period) [log10(s)]")
+plt.title("Kepler’s Third Law: log-log plot")
+plt.grid(True)
+plt.show()
+</code></pre>
+<hr/>
+<h2 id="5-graphical-representation">5. Graphical Representation</h2>
+<p>A circular orbit simulation can be animated using <code>matplotlib.animation</code>.</p>
+<p>Orbital period data from real planets supports the<br/>
+<span class="arithmatex">\(T^2 \propto r^3\)</span> relationship.</p>
+<hr/>
+<h2 id="6-extension-to-elliptical-orbits">6. Extension to Elliptical Orbits</h2>
+<p>Kepler’s Third Law still applies if <span class="arithmatex">\(r\)</span> is replaced with the semi-major axis <span class="arithmatex">\(a\)</span>.</p>
+<p>For elliptical orbits:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4\pi^2 a^3}{G M}
+\]</div>
+<p>This allows for broader applications, including comets, exoplanets, and binary stars.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
