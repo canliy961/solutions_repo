@@ -148,11 +148,11 @@ plt.show()
 
 ![alt text](image-11.png)
 
-### 4.2 Phase Space and Poincaré Section
+### 4.2 Pendulum
 
 To investigate chaotic dynamics in the forced damped pendulum, we visualize the motion using:
 
-- **Pendulum:** Plot of $\theta$ vs $\frac{d\theta}{dt}$
+- **Phase Space:** Plot of $\theta$ vs $\frac{d\theta}{dt}$
 - **Poincaré Section:** Discrete samples of the system at each driving period
 
 Let the driving period be:
