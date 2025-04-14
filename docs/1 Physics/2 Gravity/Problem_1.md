@@ -127,6 +127,8 @@ This allows for broader applications, including comets, exoplanets, and binary s
 
 ![alt text](image-1.png)
 
+![alt text](image-2.png)
+
 ## My Colab (Canliy961)
 
 [Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
