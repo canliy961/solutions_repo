@@ -152,7 +152,7 @@ plt.show()
 
 To investigate chaotic dynamics in the forced damped pendulum, we visualize the motion using:
 
-- **Phase Space:** Plot of $\theta$ vs $\frac{d\theta}{dt}$
+- **Pendulum:** Plot of $\theta$ vs $\frac{d\theta}{dt}$
 - **Poincaré Section:** Discrete samples of the system at each driving period
 
 Let the driving period be:
