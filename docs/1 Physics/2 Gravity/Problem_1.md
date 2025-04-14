@@ -48,6 +48,10 @@ $T^2 \propto r^3$
 - **Satellite Orbit Design:**  
   Used to determine the correct altitude for geosynchronous orbits.
 
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
 ---
 
 ## 3. Real-World Examples
