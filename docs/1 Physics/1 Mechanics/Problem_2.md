@@ -133,6 +133,8 @@ plt.grid(True)
 plt.show()
 ```
 
+![alt text](image-11.png)
+
 ![alt text](image-9.png)
 
 ![alt text](image-10.png)
@@ -206,8 +208,6 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-
-![alt text](image-11.png)
 
 ![alt text](image-12.png)
 
