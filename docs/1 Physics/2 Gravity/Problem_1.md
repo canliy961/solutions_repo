@@ -100,6 +100,8 @@ plt.grid(True)
 plt.show()
 ```
 
+![alt text](image.png)
+
 ---
 
 ## 5. Graphical Representation
@@ -122,3 +124,9 @@ T^2 = \frac{4\pi^2 a^3}{G M}
 $$
 
 This allows for broader applications, including comets, exoplanets, and binary stars.
+
+![alt text](image-1.png)
+
+## My Colab (Canliy961)
+
+[Kepler's Third Law](https://colab.research.google.com/drive/1J-SFd_Bao0arPcFZ-G2kJ-pq2pM0nDz4#scrollTo=qAX9SwFgJLUR)
