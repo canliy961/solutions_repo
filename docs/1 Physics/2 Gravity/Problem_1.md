@@ -29,7 +29,7 @@ $$
 \Rightarrow \frac{4\pi^2 r^2}{T^2} = \frac{G M}{r} \Rightarrow T^2 = \frac{4\pi^2 r^3}{G M}
 $$
 
-✅ **Kepler’s Third Law:**  
+**Kepler’s Third Law:**  
 $T^2 \propto r^3$
 
 ---
