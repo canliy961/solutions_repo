@@ -3,109 +3,97 @@
 
 ## 1. Definitions
 
-### Cosmic Velocities
+## Cosmic Velocities: Derivation, Earth Values and Comparison
 
-### 1. First Cosmic Velocity (Orbital Velocity)
+## A. Derivation of the Three Cosmic Velocities
 
-The first cosmic velocity is the minimum speed an object must have to stay in a stable circular orbit just above the surface of a planet, without falling back due to gravity.
+### A.1 First Cosmic Velocity (Orbital Velocity)
 
-To derive it:
+The first cosmic velocity is the minimum speed needed for an object to stay in a stable circular orbit just above the surface of a planet.
 
-The gravitational force provides the centripetal force needed for circular motion.
+The gravitational force between the planet and the object provides the necessary centripetal force for the orbit:
 
-Gravitational force between a planet of mass $M$ and an object of mass $m$ is:
+Gravitational force:
 
 $$
 F_{\text{gravity}} = \frac{G M m}{r^2}
 $$
 
-Centripetal force needed for circular motion is:
+Centripetal force:
 
 $$
-F_{\text{centripetal}} = \frac{m v_1^2}{r}
+F_{\text{centripetal}} = \frac{m v^2}{r}
 $$
 
-Setting gravitational force equal to centripetal force:
+Setting them equal:
 
 $$
-\frac{G M m}{r^2} = \frac{m v_1^2}{r}
+\frac{G M m}{r^2} = \frac{m v^2}{r}
 $$
 
-Canceling $m$ from both sides and rearranging:
+Cancel $m$ and rearrange:
 
 $$
-v_1^2 = \frac{G M}{r}
+v^2 = \frac{G M}{r}
 $$
 
 Taking the square root:
+
+$$
+v = \sqrt{\frac{G M}{r}}
+$$
+
+Thus, the first cosmic velocity is:
 
 $$
 v_1 = \sqrt{\frac{G M}{r}}
 $$
 
-Thus, the first cosmic velocity depends only on the mass of the planet and the radius at which the orbit occurs.
-
 ---
 
-### 2. Second Cosmic Velocity (Escape Velocity)
+### A.2 Second Cosmic Velocity (Escape Velocity)
 
-The second cosmic velocity is the minimum speed needed for an object to completely escape the gravitational field of a planet, without any further propulsion.
+The second cosmic velocity is the minimum speed required to completely escape a planet’s gravitational pull.
 
-To derive it:
-
-The kinetic energy of the object must be enough to overcome the gravitational potential energy.
+Using energy conservation:
 
 Kinetic energy:
 
 $$
-E_{\text{kinetic}} = \frac{1}{2} m v_2^2
+E_{\text{kinetic}} = \frac{1}{2} m v^2
 $$
 
-Gravitational potential energy at a distance $r$ from the center:
+Gravitational potential energy:
 
 $$
 E_{\text{potential}} = -\frac{G M m}{r}
 $$
 
-(negative because gravitational potential energy is zero at infinity and negative closer to the planet)
-
-For escape, total energy must be zero:
+At escape, total energy = 0:
 
 $$
-E_{\text{kinetic}} + E_{\text{potential}} = 0
+\frac{1}{2} m v^2 - \frac{G M m}{r} = 0
 $$
 
-Substituting the expressions:
+Simplifying:
 
 $$
-\frac{1}{2} m v_2^2 - \frac{G M m}{r} = 0
+\frac{1}{2} v^2 = \frac{G M}{r}
 $$
 
-Rearranging:
+Multiply by 2:
 
 $$
-\frac{1}{2} m v_2^2 = \frac{G M m}{r}
-$$
-
-Canceling $m$ from both sides:
-
-$$
-\frac{1}{2} v_2^2 = \frac{G M}{r}
-$$
-
-Multiplying both sides by 2:
-
-$$
-v_2^2 = \frac{2 G M}{r}
+v^2 = \frac{2 G M}{r}
 $$
 
 Taking the square root:
 
 $$
-v_2 = \sqrt{\frac{2 G M}{r}}
+v = \sqrt{\frac{2 G M}{r}}
 $$
 
-Thus, the second cosmic velocity is $\sqrt{2}$ times the first cosmic velocity:
+Thus, the second cosmic velocity is:
 
 $$
 v_2 = \sqrt{2} \times v_1
@@ -113,61 +101,77 @@ $$
 
 ---
 
-### 3. Third Cosmic Velocity (Solar System Escape Velocity)
+### A.3 Third Cosmic Velocity (Solar System Escape Velocity)
 
-The third cosmic velocity is the speed needed for an object not only to escape Earth's gravity, but also to escape the Sun's gravity from Earth's orbit.
+The third cosmic velocity is the speed needed to escape not just the planet but also the gravitational pull of the Sun, starting from the Earth's orbit.
 
-To derive it:
-
-When a spacecraft is launched from Earth, it already has Earth's orbital velocity around the Sun (about 30 km/s).
-
-The spacecraft needs enough additional velocity to overcome the Sun’s gravitational pull.
-
-The escape velocity from the Sun at Earth's orbit is found similarly:
-
-Gravitational force by the Sun:
-
-$$
-F_{\text{sun}} = \frac{G M_{\text{sun}} m}{r_{\text{orbit}}^2}
-$$
-
-Escape velocity from the Sun at Earth's orbital radius:
+The escape velocity from the Sun at Earth’s orbit is:
 
 $$
 v_{\text{sun-escape}} = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{orbit}}}}
 $$
 
-However, since Earth itself moves around the Sun at $v_{\text{Earth orbit}} \approx 30 \, \text{km/s}$, the spacecraft already has this velocity.
+However, because the Earth itself is moving at about 30 km/s around the Sun, the spacecraft already has that speed.
 
-Thus, the spacecraft needs an extra boost:
-
-$$
-v_{\text{needed relative to Earth}} = v_{\text{sun-escape}} - v_{\text{Earth orbit}}
-$$
-
-In reality, because of orbital dynamics and energy considerations, the third cosmic velocity (starting from Earth's surface) turns out to be around **16.7 km/s**.
-
----
-
-### Summary of Formulas
-
-**First Cosmic Velocity:**
-
-$$
-v_1 = \sqrt{\frac{G M}{r}}
-$$
-
-**Second Cosmic Velocity:**
-
-$$
-v_2 = \sqrt{\frac{2 G M}{r}} = \sqrt{2} \times v_1
-$$
-
-**Third Cosmic Velocity (Approximate at Earth's distance from Sun):**
+Thus, the additional speed needed is calculated based on energy addition, and the final result for escape from Earth's surface is approximately:
 
 $$
 v_3 \approx 16.7 \, \text{km/s}
 $$
+
+---
+
+## B. Values of Three Cosmic Velocities for Earth
+
+Using Earth’s data:
+
+- Gravitational constant: $G = 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$
+- Earth mass: $M = 5.972 \times 10^{24} \, \text{kg}$
+- Earth radius: $r = 6.371 \times 10^6 \, \text{m}$
+
+### Calculations:
+
+First Cosmic Velocity:
+
+$$
+v_1 = \sqrt{\frac{G M}{r}} \approx 7.91 \, \text{km/s}
+$$
+
+Second Cosmic Velocity:
+
+$$
+v_2 = \sqrt{2} \times v_1 \approx 11.18 \, \text{km/s}
+$$
+
+Third Cosmic Velocity:
+
+$$
+v_3 \approx 16.7 \, \text{km/s}
+$$
+
+---
+
+## C. Comparison: Earth, Moon, Mars, and Jupiter
+
+### C.1 Physical Data
+
+| Celestial Body | Mass (kg)             | Radius (m)          |
+|----------------|------------------------|---------------------|
+| Earth          | $5.972 \times 10^{24}$  | $6.371 \times 10^6$  |
+| Moon           | $7.347 \times 10^{22}$  | $1.737 \times 10^6$  |
+| Mars           | $6.417 \times 10^{23}$  | $3.3895 \times 10^6$ |
+| Jupiter        | $1.898 \times 10^{27}$  | $6.9911 \times 10^7$ |
+
+---
+
+### C.2 Calculated Velocities
+
+| Celestial Body | First Cosmic Velocity (km/s) | Second Cosmic Velocity (km/s) |
+|----------------|------------------------------|-------------------------------|
+| Earth          | 7.91                         | 11.18                         |
+| Moon           | 1.68                         | 2.38                          |
+| Mars           | 3.55                         | 5.02                          |
+| Jupiter        | 42.08                        | 59.49                         |
 
 ---
 
