@@ -3,62 +3,58 @@
 
 ## 1. Definitions
 
-- **First Cosmic Velocity** (Orbital velocity):  
-  The minimum velocity required for an object to achieve a stable circular orbit just above the surface of a celestial body.
+**First Cosmic Velocity (Orbital velocity):**  
+The minimum velocity required for an object to achieve a stable circular orbit just above the surface of a celestial body.
 
-  $$
-  v_1 = \sqrt{\frac{GM}{R}}
-  $$
+$$
+v_1 = \sqrt{\frac{GM}{R}}
+$$
 
-- **Second Cosmic Velocity** (Escape velocity):  
-  The minimum velocity needed to completely escape the gravitational pull of a celestial body without further propulsion.
+**Second Cosmic Velocity (Escape velocity):**  
+The minimum velocity needed to completely escape the gravitational pull of a celestial body, without further propulsion.
 
-  $$
-  v_2 = \sqrt{2} \times v_1 = \sqrt{\frac{2GM}{R}}
-  $$
+$$
+v_2 = \sqrt{2} \times v_1 = \sqrt{\frac{2GM}{R}}
+$$
 
-- **Third Cosmic Velocity** (Solar system escape velocity):  
-  The velocity needed to escape not just the Earth but also the Sun's gravitational pull from Earth's orbit.
+**Third Cosmic Velocity (Solar system escape velocity):**  
+The velocity needed to escape not just the Earth but also the Sun's gravitational pull from Earth's orbit.
 
 ---
 
 ## 2. Mathematical Derivations
 
-- From Newton's Law of Gravitation:
+From Newtonian gravity:
 
-  $$
-  F = \frac{GMm}{r^2}
-  $$
+$$
+F = \frac{GMm}{r^2}
+$$
 
-  Equating gravitational force to centripetal force for circular motion:
+Equating gravitational force to centripetal force for circular motion gives:
 
-  $$
-  \frac{mv^2}{r} = \frac{GMm}{r^2}
-  $$
+$$
+\frac{mv^2}{r} = \frac{GMm}{r^2}
+$$
 
-  Solving for $v$:
+Solving for $v$ gives the **first cosmic velocity**:
 
-  $$
-  v = \sqrt{\frac{GM}{r}}
-  $$
+$$
+v_1 = \sqrt{\frac{GM}{r}}
+$$
 
-  This gives the **first cosmic velocity**.
+For **escape velocity**, the kinetic energy must equal the gravitational potential energy:
 
-- For **escape velocity**, we equate kinetic energy to gravitational potential energy:
+$$
+\frac{1}{2}mv^2 = \frac{GMm}{r}
+$$
 
-  $$
-  \frac{1}{2}mv^2 = \frac{GMm}{r}
-  $$
+Solving for $v$ gives the **second cosmic velocity**:
 
-  Solving for $v$:
+$$
+v_2 = \sqrt{\frac{2GM}{r}}
+$$
 
-  $$
-  v = \sqrt{\frac{2GM}{r}}
-  $$
-
-  This is the **second cosmic velocity**.
-
-- The **third cosmic velocity** involves the escape from the solar system, considering the Earth's orbital speed around the Sun.
+The **third cosmic velocity** requires calculating the escape speed from the Sun, considering Earth's orbital velocity around the Sun (about 30 km/s).
 
 ---
 
@@ -119,24 +115,3 @@ ax.legend()
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.show()
 ```
-
-## 4. Results
-
-The calculated cosmic velocities for Earth, Mars, and Jupiter are summarized below:
-
-\[
-\begin{array}{|c|c|c|}
-\hline
-\textbf{Celestial Body} & \textbf{First Cosmic Velocity (km/s)} & \textbf{Second Cosmic Velocity (km/s)} \\
-\hline
-\text{Earth} & 7.91 & 11.18 \\
-\hline
-\text{Mars} & 3.55 & 5.02 \\
-\hline
-\text{Jupiter} & 42.08 & 59.49 \\
-\hline
-\end{array}
-\]
-
-- **First Cosmic Velocity**: The minimum speed needed for a stable circular orbit near the surface.
-- **Second Cosmic Velocity**: The minimum speed needed to escape the gravitational influence completely.
