@@ -279,27 +279,130 @@ v_3 \approx 16.7 \, \text{km/s}
 \]</div>
 <hr/>
 <h2 id="2-mathematical-derivations">2. Mathematical Derivations</h2>
-<p>From Newtonian gravity:</p>
+<h3 id="21-derivation-of-the-first-cosmic-velocity-orbital-velocity">2.1 Derivation of the First Cosmic Velocity (Orbital Velocity)</h3>
+<p>The first cosmic velocity is the speed needed for an object to maintain a stable circular orbit just above the surface of a planet without falling back.</p>
+<p>Start by considering the two forces:</p>
+<p><strong>Gravitational force</strong> acts to pull the object toward the center:</p>
 <div class="arithmatex">\[
-F = \frac{GMm}{r^2}
+F_{\text{gravity}} = \frac{G M m}{r^2}
 \]</div>
-<p>Equating gravitational force to centripetal force for circular motion gives:</p>
+<p><strong>Centripetal force</strong> keeps the object moving in a circle:</p>
 <div class="arithmatex">\[
-\frac{mv^2}{r} = \frac{GMm}{r^2}
+F_{\text{centripetal}} = \frac{m v_1^2}{r}
 \]</div>
-<p>Solving for <span class="arithmatex">\(v\)</span> gives the <strong>first cosmic velocity</strong>:</p>
+<p>To maintain a circular orbit, these two forces must balance:</p>
 <div class="arithmatex">\[
-v_1 = \sqrt{\frac{GM}{r}}
+\frac{G M m}{r^2} = \frac{m v_1^2}{r}
 \]</div>
-<p>For <strong>escape velocity</strong>, the kinetic energy must equal the gravitational potential energy:</p>
+<p>Simplify:</p>
+<ul>
+<li>Cancel <span class="arithmatex">\(m\)</span> from both sides.</li>
+<li>Multiply both sides by <span class="arithmatex">\(r\)</span>.</li>
+</ul>
+<p>Result:</p>
 <div class="arithmatex">\[
-\frac{1}{2}mv^2 = \frac{GMm}{r}
+G M = v_1^2 r
 \]</div>
-<p>Solving for <span class="arithmatex">\(v\)</span> gives the <strong>second cosmic velocity</strong>:</p>
+<p>Solve for <span class="arithmatex">\(v_1\)</span>:</p>
 <div class="arithmatex">\[
-v_2 = \sqrt{\frac{2GM}{r}}
+v_1^2 = \frac{G M}{r}
 \]</div>
-<p>The <strong>third cosmic velocity</strong> requires calculating the escape speed from the Sun, considering Earth's orbital velocity around the Sun (about 30 km/s).</p>
+<p>Taking the square root:</p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{G M}{r}}
+\]</div>
+<p>Thus, the first cosmic velocity is:</p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{G M}{r}}
+\]</div>
+<hr/>
+<h3 id="22-derivation-of-the-second-cosmic-velocity-escape-velocity">2.2 Derivation of the Second Cosmic Velocity (Escape Velocity)</h3>
+<p>The second cosmic velocity is the minimum speed needed for an object to completely escape the gravitational field of a planet.</p>
+<p>The idea is based on energy conservation: the object must have enough kinetic energy to overcome its gravitational potential energy.</p>
+<p>Kinetic energy:</p>
+<div class="arithmatex">\[
+E_{\text{kinetic}} = \frac{1}{2} m v_2^2
+\]</div>
+<p>Gravitational potential energy:</p>
+<div class="arithmatex">\[
+E_{\text{potential}} = -\frac{G M m}{r}
+\]</div>
+<p>At the surface, the total mechanical energy must be zero for escape:</p>
+<div class="arithmatex">\[
+E_{\text{kinetic}} + E_{\text{potential}} = 0
+\]</div>
+<p>Substituting:</p>
+<div class="arithmatex">\[
+\frac{1}{2} m v_2^2 - \frac{G M m}{r} = 0
+\]</div>
+<p>Rearranging:</p>
+<div class="arithmatex">\[
+\frac{1}{2} m v_2^2 = \frac{G M m}{r}
+\]</div>
+<p>Cancel <span class="arithmatex">\(m\)</span> from both sides:</p>
+<div class="arithmatex">\[
+\frac{1}{2} v_2^2 = \frac{G M}{r}
+\]</div>
+<p>Multiply both sides by 2:</p>
+<div class="arithmatex">\[
+v_2^2 = \frac{2 G M}{r}
+\]</div>
+<p>Taking the square root:</p>
+<div class="arithmatex">\[
+v_2 = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>Thus, the second cosmic velocity is:</p>
+<div class="arithmatex">\[
+v_2 = \sqrt{2} \times v_1
+\]</div>
+<p>(meaning it is <span class="arithmatex">\(\sqrt{2}\)</span> times larger than the first cosmic velocity.)</p>
+<hr/>
+<h3 id="23-derivation-of-the-third-cosmic-velocity-solar-system-escape-velocity">2.3 Derivation of the Third Cosmic Velocity (Solar System Escape Velocity)</h3>
+<p>The third cosmic velocity is the speed needed not just to escape Earth’s gravity, but also the Sun's gravity from Earth’s orbit.</p>
+<p>First, the escape velocity from the Sun at Earth's orbit is:</p>
+<div class="arithmatex">\[
+v_{\text{sun-escape}} = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{orbit}}}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(M_{\text{sun}}\)</span> is the mass of the Sun,</li>
+<li><span class="arithmatex">\(r_{\text{orbit}}\)</span> is the distance from the Sun to the Earth (about 1 AU, or <span class="arithmatex">\(1.496 \times 10^{11}\)</span> meters).</li>
+</ul>
+<p>However, the spacecraft already has Earth's orbital speed around the Sun, about 30 km/s.</p>
+<p>Thus, the additional velocity needed is the difference:</p>
+<div class="arithmatex">\[
+v_{\text{needed}} = v_{\text{sun-escape}} - v_{\text{Earth orbit}}
+\]</div>
+<p>In practice, considering Earth's own gravitational pull, atmosphere, and the need to overcome Earth's gravity first (second cosmic velocity), the real calculation is more complex.</p>
+<p>When everything is accounted for, the third cosmic velocity from the Earth's surface is approximately <strong>16.7 km/s</strong>.</p>
+<hr/>
+<h3 id="quick-recap">Quick Recap</h3>
+<table>
+<thead>
+<tr>
+<th>Cosmic Velocity</th>
+<th>Meaning</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First Cosmic Velocity</td>
+<td>Orbital velocity around Earth</td>
+<td><span class="arithmatex">\(v_1 = \sqrt{\frac{G M}{r}}\)</span></td>
+</tr>
+<tr>
+<td>Second Cosmic Velocity</td>
+<td>Escape Earth’s gravity</td>
+<td><span class="arithmatex">\(v_2 = \sqrt{2} \times v_1 = \sqrt{\frac{2 G M}{r}}\)</span></td>
+</tr>
+<tr>
+<td>Third Cosmic Velocity</td>
+<td>Escape Sun’s gravity from Earth's orbit</td>
+<td>Approx. 16.7 km/s</td>
+</tr>
+</tbody>
+</table>
 <hr/>
 <h2 id="3-python-simulation-and-visualization">3. Python Simulation and Visualization</h2>
 <pre><code class="language-python"># cosmic_velocities.py
