@@ -161,4 +161,4 @@ plt.show()
 
 ## My Colab (Canliy961)
 
-[Trajectories in a Gravitational Field](https://colab.research.google.com/drive/1-evxyB7Hd3zIBsgVpNY7_62dbJIUNXuB#scrollTo=ExcQlDW_Sz97)
+[Trajectories in Gravitational Field](https://colab.research.google.com/drive/1-evxyB7Hd3zIBsgVpNY7_62dbJIUNXuB#scrollTo=ExcQlDW_Sz97)
