@@ -1,7 +1,7 @@
 # Problem 2
 # Escape Velocities and Cosmic Velocities
 
-## 1. Definitions
+# 1. Definitions
 
 ## Cosmic Velocities: Derivation, Earth Values and Comparison
 
@@ -175,7 +175,7 @@ $$
 
 ---
 
-## 2. Mathematical Derivations
+# 2. Mathematical Derivations
 
 ### 2.1 Derivation of the First Cosmic Velocity (Orbital Velocity)
 
@@ -335,7 +335,7 @@ When everything is accounted for, the third cosmic velocity from the Earth's sur
 
 ---
 
-## 3. Python Simulation and Visualization
+# 3. Python Simulation and Visualization
 
 ```python
 # cosmic_velocities.py
