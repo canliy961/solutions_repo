@@ -3,7 +3,7 @@
 
 ## 1. Definitions
 
-# Cosmic Velocities
+### Cosmic Velocities
 
 ### 1. First Cosmic Velocity (Orbital Velocity)
 
@@ -149,7 +149,7 @@ In reality, because of orbital dynamics and energy considerations, the third cos
 
 ---
 
-## Summary of Formulas
+### Summary of Formulas
 
 **First Cosmic Velocity:**
 
