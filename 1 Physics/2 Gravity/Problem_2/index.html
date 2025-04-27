@@ -172,6 +172,92 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</h1>
+<h2 id="1-definitions">1. Definitions</h2>
+<p><strong>First Cosmic Velocity (Orbital Velocity):</strong></p>
+<p>The minimum velocity needed for an object to stay in a stable circular orbit close to the surface of a celestial body without propulsion.</p>
+<p>For Earth, this is approximately <strong>7.9 km/s</strong>.</p>
+<p><strong>Second Cosmic Velocity (Escape Velocity):</strong></p>
+<p>The minimum velocity needed to break free from the gravitational pull of a celestial body without further propulsion.</p>
+<p>For Earth, this is approximately <strong>11.2 km/s</strong>.</p>
+<p><strong>Third Cosmic Velocity (Heliocentric Escape Velocity):</strong></p>
+<p>The minimum velocity needed to escape the gravitational influence of the Sun (or any star) from Earth orbit.</p>
+<p>For Earth, this is about <strong>16.7 km/s</strong> relative to the Sun.</p>
+<hr/>
+<h2 id="2-mathematical-derivations">2. Mathematical Derivations</h2>
+<p><strong>First Cosmic Velocity (circular orbit velocity):</strong></p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{GM}{r}}
+\]</div>
+<p><strong>Second Cosmic Velocity (escape velocity):</strong></p>
+<div class="arithmatex">\[
+v_2 = \sqrt{2} \times v_1 = \sqrt{\frac{2GM}{r}}
+\]</div>
+<p><strong>Third Cosmic Velocity (leaving the solar system):</strong></p>
+<p>To escape the Sun's gravity from a planet's orbit:</p>
+<div class="arithmatex">\[
+v_3 = \sqrt{v_{\text{planet orbit}}^2 + v_{\text{escape from planet}}^2}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(v_{\text{planet orbit}}\)</span> is the orbital speed of the planet around the Sun.</li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><span class="arithmatex">\(G\)</span> is the gravitational constant: <span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3\,\text{kg}^{-1}\,\text{s}^{-2}\)</span></li>
+<li><span class="arithmatex">\(M\)</span> is the mass of the celestial body</li>
+<li><span class="arithmatex">\(r\)</span> is the radius (distance from the center of the body)</li>
+</ul>
+<hr/>
+<h2 id="3-python-code-for-calculations-and-visualization">3. Python Code for Calculations and Visualization</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Gravitational constant
+G = 6.67430e-11  # m^3 kg^-1 s^-2
+
+# Celestial body parameters: (mass in kg, radius in m)
+bodies = {
+    'Earth': (5.972e24, 6.371e6),
+    'Mars': (6.39e23, 3.3895e6),
+    'Jupiter': (1.898e27, 6.9911e7)
+}
+
+# Orbital speeds around the Sun (approximate) in m/s
+orbital_speeds = {
+    'Earth': 29.78e3,
+    'Mars': 24.077e3,
+    'Jupiter': 13.07e3
+}
+
+# Store results
+results = {}
+
+for body, (mass, radius) in bodies.items():
+    v1 = np.sqrt(G * mass / radius)  # First cosmic velocity
+    v2 = np.sqrt(2) * v1             # Second cosmic velocity
+    v3 = np.sqrt(orbital_speeds[body]**2 + v2**2)  # Third cosmic velocity
+
+    results[body] = {
+        'First Cosmic Velocity (km/s)': v1 / 1000,
+        'Second Cosmic Velocity (km/s)': v2 / 1000,
+        'Third Cosmic Velocity (km/s)': v3 / 1000
+    }
+
+# Display results
+df = pd.DataFrame(results).T
+print(df)
+
+# Plotting
+df.plot(kind='bar', figsize=(10, 6))
+plt.title('Cosmic Velocities for Different Celestial Bodies')
+plt.ylabel('Velocity (km/s)')
+plt.xticks(rotation=0)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
