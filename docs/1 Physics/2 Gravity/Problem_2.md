@@ -173,37 +173,161 @@ $$
 
 ## 2. Mathematical Derivations
 
-From Newtonian gravity:
+### 2.1 Derivation of the First Cosmic Velocity (Orbital Velocity)
+
+The first cosmic velocity is the speed needed for an object to maintain a stable circular orbit just above the surface of a planet without falling back.
+
+Start by considering the two forces:
+
+**Gravitational force** acts to pull the object toward the center:
 
 $$
-F = \frac{GMm}{r^2}
+F_{\text{gravity}} = \frac{G M m}{r^2}
 $$
 
-Equating gravitational force to centripetal force for circular motion gives:
+**Centripetal force** keeps the object moving in a circle:
 
 $$
-\frac{mv^2}{r} = \frac{GMm}{r^2}
+F_{\text{centripetal}} = \frac{m v_1^2}{r}
 $$
 
-Solving for $v$ gives the **first cosmic velocity**:
+To maintain a circular orbit, these two forces must balance:
 
 $$
-v_1 = \sqrt{\frac{GM}{r}}
+\frac{G M m}{r^2} = \frac{m v_1^2}{r}
 $$
 
-For **escape velocity**, the kinetic energy must equal the gravitational potential energy:
+Simplify:
+
+- Cancel $m$ from both sides.
+- Multiply both sides by $r$.
+
+Result:
 
 $$
-\frac{1}{2}mv^2 = \frac{GMm}{r}
+G M = v_1^2 r
 $$
 
-Solving for $v$ gives the **second cosmic velocity**:
+Solve for $v_1$:
 
 $$
-v_2 = \sqrt{\frac{2GM}{r}}
+v_1^2 = \frac{G M}{r}
 $$
 
-The **third cosmic velocity** requires calculating the escape speed from the Sun, considering Earth's orbital velocity around the Sun (about 30 km/s).
+Taking the square root:
+
+$$
+v_1 = \sqrt{\frac{G M}{r}}
+$$
+
+Thus, the first cosmic velocity is:
+
+$$
+v_1 = \sqrt{\frac{G M}{r}}
+$$
+
+---
+
+### 2.2 Derivation of the Second Cosmic Velocity (Escape Velocity)
+
+The second cosmic velocity is the minimum speed needed for an object to completely escape the gravitational field of a planet.
+
+The idea is based on energy conservation: the object must have enough kinetic energy to overcome its gravitational potential energy.
+
+Kinetic energy:
+
+$$
+E_{\text{kinetic}} = \frac{1}{2} m v_2^2
+$$
+
+Gravitational potential energy:
+
+$$
+E_{\text{potential}} = -\frac{G M m}{r}
+$$
+
+At the surface, the total mechanical energy must be zero for escape:
+
+$$
+E_{\text{kinetic}} + E_{\text{potential}} = 0
+$$
+
+Substituting:
+
+$$
+\frac{1}{2} m v_2^2 - \frac{G M m}{r} = 0
+$$
+
+Rearranging:
+
+$$
+\frac{1}{2} m v_2^2 = \frac{G M m}{r}
+$$
+
+Cancel $m$ from both sides:
+
+$$
+\frac{1}{2} v_2^2 = \frac{G M}{r}
+$$
+
+Multiply both sides by 2:
+
+$$
+v_2^2 = \frac{2 G M}{r}
+$$
+
+Taking the square root:
+
+$$
+v_2 = \sqrt{\frac{2 G M}{r}}
+$$
+
+Thus, the second cosmic velocity is:
+
+$$
+v_2 = \sqrt{2} \times v_1
+$$
+
+(meaning it is $\sqrt{2}$ times larger than the first cosmic velocity.)
+
+---
+
+### 2.3 Derivation of the Third Cosmic Velocity (Solar System Escape Velocity)
+
+The third cosmic velocity is the speed needed not just to escape Earth’s gravity, but also the Sun's gravity from Earth’s orbit.
+
+First, the escape velocity from the Sun at Earth's orbit is:
+
+$$
+v_{\text{sun-escape}} = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{orbit}}}}
+$$
+
+Where:
+
+- $M_{\text{sun}}$ is the mass of the Sun,
+- $r_{\text{orbit}}$ is the distance from the Sun to the Earth (about 1 AU, or $1.496 \times 10^{11}$ meters).
+
+However, the spacecraft already has Earth's orbital speed around the Sun, about 30 km/s.
+
+Thus, the additional velocity needed is the difference:
+
+$$
+v_{\text{needed}} = v_{\text{sun-escape}} - v_{\text{Earth orbit}}
+$$
+
+In practice, considering Earth's own gravitational pull, atmosphere, and the need to overcome Earth's gravity first (second cosmic velocity), the real calculation is more complex.
+
+When everything is accounted for, the third cosmic velocity from the Earth's surface is approximately **16.7 km/s**.
+
+---
+
+### Quick Recap
+
+| Cosmic Velocity         | Meaning                              | Formula |
+|--------------------------|--------------------------------------|---------|
+| First Cosmic Velocity    | Orbital velocity around Earth        | $v_1 = \sqrt{\frac{G M}{r}}$ |
+| Second Cosmic Velocity   | Escape Earth’s gravity               | $v_2 = \sqrt{2} \times v_1 = \sqrt{\frac{2 G M}{r}}$ |
+| Third Cosmic Velocity    | Escape Sun’s gravity from Earth's orbit | Approx. 16.7 km/s |
 
 ---
 
