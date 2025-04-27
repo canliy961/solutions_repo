@@ -281,38 +281,41 @@ def simulate_trajectory(r0, v0, t_max, dt):
     return np.array(positions)
 
 # Initial conditions
-altitude = 400e3  # 400 km above Earth's surface
-r0 = np.array([R_earth + altitude, 0])  # starting position
-v_circular = np.sqrt(G * M_earth / (R_earth + altitude))  # circular orbital speed
-v_escape = np.sqrt(2) * v_circular  # escape velocity at that altitude
+altitude = 800e3  # 800 km above Earth's surface
+r0 = np.array([R_earth + altitude, 0])  # starting position on the right
+v_magnitudes = np.arange(5e3, 13.5e3, 0.5e3)  # from 5 km/s to 13 km/s
 
-# Different initial velocities
-velocities = [
-    0.5 * v_circular,
-    v_circular,
-    1.1 * v_circular,
-    v_escape
-]
+# Plot setup
+fig, ax = plt.subplots(figsize=(12,12))
 
-# Plot trajectories
-plt.figure(figsize=(8,8))
-theta = np.linspace(0, 2*np.pi, 100)
-earth = R_earth * np.array([np.cos(theta), np.sin(theta)])
-plt.plot(earth[0], earth[1], 'k')  # Earth outline
+# Draw Earth (darker blue)
+theta = np.linspace(0, 2*np.pi, 500)
+earth_x = R_earth * np.cos(theta)
+earth_y = R_earth * np.sin(theta)
+ax.fill(earth_x, earth_y, color='royalblue', label="Earth")
 
-for v0_mag in velocities:
-    v0 = np.array([0, v0_mag])
-    trajectory = simulate_trajectory(r0, v0, t_max=20000, dt=1)
-    plt.plot(trajectory[:,0], trajectory[:,1], label=f'v0 = {v0_mag/1000:.1f} km/s')
+# Mark center of Earth
+ax.plot(0, 0, 'r.', markersize=10, label="Center of Earth")
 
-plt.legend()
-plt.xlabel('x (m)')
-plt.ylabel('y (m)')
-plt.title('Trajectories of Released Payloads')
-plt.grid()
-plt.axis('equal')
+# Simulate and plot for each velocity
+for idx, v0_mag in enumerate(v_magnitudes):
+    v0 = np.array([0, v0_mag])  # vertically shooting
+    trajectory = simulate_trajectory(r0, v0, t_max=15000, dt=1)
+    ax.plot(trajectory[:,0], trajectory[:,1], lw=2, label=f'{v0_mag/1e3:.1f} km/s')
+
+# Final plot settings
+ax.set_xlabel('x (m)', fontsize=14)
+ax.set_ylabel('y (m)', fontsize=14)
+ax.set_title('Trajectories in a Gravitational Field with Filled Earth', fontsize=16)
+ax.legend(fontsize=10)
+ax.grid(True)
+ax.axis('equal')
+ax.set_xlim(-4e7, 4e7)
+ax.set_ylim(-4e7, 4e7)
+
 plt.show()
 </code></pre>
+<p><img alt="alt text" src="../image-8.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
