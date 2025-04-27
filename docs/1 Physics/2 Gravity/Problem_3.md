@@ -71,12 +71,6 @@ We assume:
 
 ## 3. Python Script
 
-Below is the Python code that:
-
-- Defines Earth parameters,
-- Simulates the motion,
-- Visualizes trajectories for different initial velocities.
-
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
