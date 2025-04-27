@@ -172,6 +172,147 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="1-theoretical-background">1. Theoretical Background</h2>
+<p>When a payload is released from a moving spacecraft near Earth, its trajectory depends on:</p>
+<ul>
+<li>Initial position (altitude above Earth's surface),</li>
+<li>Initial velocity (magnitude and direction),</li>
+<li>Gravitational force acting toward Earth’s center.</li>
+</ul>
+<p>The motion is governed by Newton’s Law of Universal Gravitation:</p>
+<div class="arithmatex">\[
+F = \frac{G M m}{r^2}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(F\)</span> is the gravitational force,</li>
+<li><span class="arithmatex">\(G = 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span> is the gravitational constant,</li>
+<li><span class="arithmatex">\(M\)</span> is Earth's mass (<span class="arithmatex">\(5.972 \times 10^{24} \, \text{kg}\)</span>),</li>
+<li><span class="arithmatex">\(m\)</span> is the mass of the payload (cancels out),</li>
+<li><span class="arithmatex">\(r\)</span> is the distance from Earth's center.</li>
+</ul>
+<p>The equation of motion becomes:</p>
+<div class="arithmatex">\[
+\ddot{r} = -\frac{G M}{r^3} r
+\]</div>
+<p>Depending on the energy:</p>
+<ul>
+<li>Elliptical trajectory if total energy <span class="arithmatex">\(E &lt; 0\)</span>,</li>
+<li>Parabolic trajectory if <span class="arithmatex">\(E = 0\)</span>,</li>
+<li>Hyperbolic trajectory if <span class="arithmatex">\(E &gt; 0\)</span>.</li>
+</ul>
+<p>Where total energy:</p>
+<div class="arithmatex">\[
+E = \frac{1}{2} m v^2 - \frac{G M m}{r}
+\]</div>
+<p>Escape velocity at a given altitude:</p>
+<div class="arithmatex">\[
+v_{\text{esc}} = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>If <span class="arithmatex">\(v &lt; v_{\text{esc}}\)</span>: payload remains bound (orbit or reentry).</p>
+<p>If <span class="arithmatex">\(v \geq v_{\text{esc}}\)</span>: payload escapes Earth’s gravity.</p>
+<hr/>
+<h2 id="2-numerical-simulation-approach">2. Numerical Simulation Approach</h2>
+<p>We solve the second-order differential equation for motion numerically using time stepping (Euler or Runge-Kutta 4th order).</p>
+<p>At each time step:</p>
+<ul>
+<li>Update acceleration based on current position.</li>
+<li>Update velocity based on acceleration.</li>
+<li>Update position based on velocity.</li>
+</ul>
+<p>We assume:</p>
+<ul>
+<li>No atmospheric drag (valid at high altitudes).</li>
+</ul>
+<hr/>
+<h2 id="3-python-script">3. Python Script</h2>
+<p>Below is the Python code that:</p>
+<ul>
+<li>Defines Earth parameters,</li>
+<li>Simulates the motion,</li>
+<li>Visualizes trajectories for different initial velocities.</li>
+</ul>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # gravitational constant, m^3/kg/s^2
+M_earth = 5.972e24  # mass of Earth, kg
+R_earth = 6371e3  # radius of Earth, meters
+
+# Function to compute acceleration
+def acceleration(r):
+    r_norm = np.linalg.norm(r)
+    return -G * M_earth * r / r_norm**3
+
+# Runge-Kutta 4th order method
+def rk4_step(r, v, dt):
+    k1_v = acceleration(r)
+    k1_r = v
+
+    k2_v = acceleration(r + 0.5*dt*k1_r)
+    k2_r = v + 0.5*dt*k1_v
+
+    k3_v = acceleration(r + 0.5*dt*k2_r)
+    k3_r = v + 0.5*dt*k2_v
+
+    k4_v = acceleration(r + dt*k3_r)
+    k4_r = v + dt*k3_v
+
+    r_new = r + (dt/6)*(k1_r + 2*k2_r + 2*k3_r + k4_r)
+    v_new = v + (dt/6)*(k1_v + 2*k2_v + 2*k3_v + k4_v)
+
+    return r_new, v_new
+
+# Simulation function
+def simulate_trajectory(r0, v0, t_max, dt):
+    r = r0.copy()
+    v = v0.copy()
+    positions = [r0]
+
+    for _ in range(int(t_max/dt)):
+        r, v = rk4_step(r, v, dt)
+        positions.append(r)
+
+        if np.linalg.norm(r) &lt; R_earth:  # collision with Earth
+            break
+
+    return np.array(positions)
+
+# Initial conditions
+altitude = 400e3  # 400 km above Earth's surface
+r0 = np.array([R_earth + altitude, 0])  # starting position
+v_circular = np.sqrt(G * M_earth / (R_earth + altitude))  # circular orbital speed
+v_escape = np.sqrt(2) * v_circular  # escape velocity at that altitude
+
+# Different initial velocities
+velocities = [
+    0.5 * v_circular,
+    v_circular,
+    1.1 * v_circular,
+    v_escape
+]
+
+# Plot trajectories
+plt.figure(figsize=(8,8))
+theta = np.linspace(0, 2*np.pi, 100)
+earth = R_earth * np.array([np.cos(theta), np.sin(theta)])
+plt.plot(earth[0], earth[1], 'k')  # Earth outline
+
+for v0_mag in velocities:
+    v0 = np.array([0, v0_mag])
+    trajectory = simulate_trajectory(r0, v0, t_max=20000, dt=1)
+    plt.plot(trajectory[:,0], trajectory[:,1], label=f'v0 = {v0_mag/1000:.1f} km/s')
+
+plt.legend()
+plt.xlabel('x (m)')
+plt.ylabel('y (m)')
+plt.title('Trajectories of Released Payloads')
+plt.grid()
+plt.axis('equal')
+plt.show()
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
