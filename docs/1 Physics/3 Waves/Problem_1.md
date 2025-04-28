@@ -132,3 +132,11 @@ Close to each source, circular patterns dominate. Farther away, the patterns bec
 ![alt text](image-1.png)
 
 ![alt text](image-2.png)
+
+![alt text](indir.gif)
+
+![alt text](<indir 2.gif>)
+
+## My Colab (Canliy961)
+
+[Wave Interference](https://colab.research.google.com/drive/137PFxDFKb2wla23Rlr7ULNHmS0aZ2oDU#scrollTo=8PlL2RrHpPTd&uniqifier=2)
