@@ -103,6 +103,8 @@ plt.axis('equal')
 plt.show()
 ```
 
+![alt text](image.png)
+
 ## 6. Analysis of Interference Patterns
 
 **Constructive Interference:**
