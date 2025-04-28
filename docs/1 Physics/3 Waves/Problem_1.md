@@ -129,3 +129,6 @@ Close to each source, circular patterns dominate. Farther away, the patterns bec
 - Try other polygons (triangle, pentagon, hexagon) and compare the resulting patterns.
 - Introduce slight phase differences between the sources and study how the interference pattern changes.
 
+![alt text](image-1.png)
+
+![alt text](image-2.png)
