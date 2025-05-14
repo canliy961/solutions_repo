@@ -128,7 +128,27 @@ $$
 \vec{v}_{\text{drift}} = \frac{\vec{E} \times \vec{B}}{B^2}
 $$
 
-![alt text](image.png)
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+**Explanation:**  
+The $\vec{E} \times \vec{B}$ drift velocity is given by:
+
+$$
+\vec{v}_{\text{drift}} = \frac{\vec{E} \times \vec{B}}{B^2}
+$$
+
+For $\vec{E} = [0, 10, 0]$ and $\vec{B} = [0, 0, 1]$, we get:
+
+$$
+\vec{v}_{\text{drift}} = \frac{[0, 10, 0] \times [0, 0, 1]}{1^2} = \frac{[10, 0, 0]}{1} = [10, 0, 0]
+$$
+
+The result is a circular or spiral motion in the plane, drifting steadily in the $x$-direction — a common effect in plasma physics and beam devices.
+
 
 ## My Colab (Canliy961)
 
