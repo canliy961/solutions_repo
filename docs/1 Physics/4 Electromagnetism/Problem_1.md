@@ -125,6 +125,8 @@ $$
 
 ![image](https://github.com/user-attachments/assets/0b8dcbd3-6856-4651-bcc5-acb84a5f93b1)
 
+![image](https://github.com/user-attachments/assets/efa7af53-7bfd-4005-89c8-92cc4a3a106e)
+
 ![image](https://github.com/user-attachments/assets/4c076add-759e-4f54-805f-d10cfdf1c548)
 
 ![image](https://github.com/user-attachments/assets/b9c081c9-de7a-4c1e-b95f-6072cef837b6)
