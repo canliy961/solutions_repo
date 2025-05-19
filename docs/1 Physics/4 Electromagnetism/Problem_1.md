@@ -24,67 +24,62 @@ Use Runge-Kutta (RK4) to solve this system numerically.
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-
-# Parameters: macroscopic charge and mass
-q = 1.0        # Charge in Coulombs
-m = 0.001      # Mass in kilograms (1 gram)
-
-# Field configuration
-E = np.array([0, 0, 0])    # Electric field (V/m)
-B = np.array([0, 0, 1])    # Magnetic field (T)
-
-# Initial conditions for helical motion
-v0 = np.array([10, 0, 10])  # Initial velocity (m/s)
-r0 = np.array([0, 0, 0])    # Initial position (m)
-
-# Time settings
-dt = 0.001  # Time step (s)
-T = 5       # Total simulation time (s)
-N = int(T / dt)
-
-# Arrays to store positions and velocities
-positions = np.zeros((N, 3))
-velocities = np.zeros((N, 3))
-positions[0] = r0
-velocities[0] = v0
-
-# Lorentz acceleration
-def lorentz_accel(v, B, E):
-    return (q / m) * (E + np.cross(v, B))
-
-# Runge-Kutta 4th Order Integration
-for i in range(N - 1):
-    r = positions[i]
-    v = velocities[i]
-
-    k1v = lorentz_accel(v, B, E)
-    k1r = v
-
-    k2v = lorentz_accel(v + 0.5 * dt * k1v, B, E)
-    k2r = v + 0.5 * dt * k1v
-
-    k3v = lorentz_accel(v + 0.5 * dt * k2v, B, E)
-    k3r = v + 0.5 * dt * k2v
-
-    k4v = lorentz_accel(v + dt * k3v, B, E)
-    k4r = v + dt * k3v
-
-    velocities[i+1] = v + (dt / 6) * (k1v + 2*k2v + 2*k3v + k4v)
-    positions[i+1] = r + (dt / 6) * (k1r + 2*k2r + 2*k3r + k4r)
-
-# Plot the 3D trajectory
-fig = plt.figure(figsize=(10, 6))
+ 
+# Constants
+q = 1.0               # charge [C]
+m = 1.0               # mass [kg] — increased to prevent blow-up
+dt = 0.001            # smaller time step for better stability
+steps = 20000          # number of steps
+ 
+# Lorentz force equation
+def lorentz_force(v, E, B):
+    return q * (E + np.cross(v, B))
+ 
+# Leapfrog (Velocity-Verlet) integration
+def simulate_motion(v0, E, B, r0=np.array([0, 0, 0])):
+    r = [r0]
+    v = [v0]
+   
+    # First half-step velocity update (leapfrog)
+    a = lorentz_force(v0, E, B) / m
+    v_half = v0 + 0.5 * a * dt
+ 
+    for _ in range(steps):
+        # Full step position update
+        r_next = r[-1] + v_half * dt
+        r.append(r_next)
+ 
+        # Compute acceleration at new position (based on velocity)
+        a = lorentz_force(v_half, E, B) / m
+ 
+        # Full step velocity update
+        v_half = v_half + a * dt
+        v.append(v_half - 0.5 * a * dt)  # Store full-step velocity for record
+ 
+    return np.array(r), np.array(v)
+ 
+# Fields and initial conditions
+B = np.array([0, 0, 1])                 # Uniform magnetic field along z-axis
+E = np.array([0, 0, 0])                 # No electric field
+v0_spiral = np.array([1.0, 0.0, 0.5])   # Initial velocity with z-component
+r0 = np.array([0.0, 0.0, 0.0])          # Starting at origin
+ 
+# Run simulation
+positions, velocities = simulate_motion(v0_spiral, E, B, r0)
+ 
+# 3D Plot of the trajectory
+fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection='3d')
 ax.plot(positions[:, 0], positions[:, 1], positions[:, 2])
-ax.set_xlabel('x (m)')
-ax.set_ylabel('y (m)')
-ax.set_zlabel('z (m)')
-ax.set_title('Helical Trajectory (q = 1 C, m = 1g)')
+ax.set_title("Stable Spiral Trajectory in Magnetic Field")
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+ax.set_zlabel("z")
 plt.tight_layout()
 plt.show()
 ```
 
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/fd38344d-9246-40b2-952d-1dad498f8d8b)
 
 ## 4. Parameter Exploration
 
