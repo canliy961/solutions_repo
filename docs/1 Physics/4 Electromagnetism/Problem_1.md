@@ -123,13 +123,13 @@ $$
 \vec{v}_{\text{drift}} = \frac{\vec{E} \times \vec{B}}{B^2}
 $$
 
-![image](https://github.com/user-attachments/assets/5bf7fdc6-18ff-4ac4-b711-bd536184d714)
+![image](https://github.com/user-attachments/assets/0b8dcbd3-6856-4651-bcc5-acb84a5f93b1)
 
-![image](https://github.com/user-attachments/assets/ba2e7856-9e43-478e-a7b5-91d9a4c3e35d)
+![image](https://github.com/user-attachments/assets/4c076add-759e-4f54-805f-d10cfdf1c548)
 
-![image](https://github.com/user-attachments/assets/2aabdd67-9c45-4f83-843c-f2ef59267b77)
+![image](https://github.com/user-attachments/assets/b9c081c9-de7a-4c1e-b95f-6072cef837b6)
 
-![image](https://github.com/user-attachments/assets/ac43b19d-c24c-4d74-b0ab-7a8203fe04e4)
+![image](https://github.com/user-attachments/assets/989a3e08-db3c-4f2a-ac4a-bc208ec28183)
 
 **Explanation:**  
 The $\vec{E} \times \vec{B}$ drift velocity is given by:
