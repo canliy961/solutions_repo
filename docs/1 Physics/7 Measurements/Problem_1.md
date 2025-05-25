@@ -87,6 +87,8 @@ $$\frac{\Delta g}{g} \approx \sqrt{2.5 \times 10^{-7} + 7.1 \times 10^{-7}} \app
 - Absolute uncertainty in $g$:  
   $$\Delta g \approx 0.00098 \cdot 9.719 \approx 0.0095 \ \text{m/s}^2$$
 
+![alt text](image-4.png)
+
 ---
 
 ## Final Results
@@ -126,6 +128,8 @@ The result is within 0.9% of the standard value — reasonably accurate.
 - Small-angle approximation (<15°) holds.  
 - No air resistance or friction considered.  
 - Mass of the string is negligible.
+
+![alt text](image-3.png)
 
 ---
 
