@@ -172,6 +172,214 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="monte-carlo-estimation-of-pi">Monte Carlo Estimation of <span class="arithmatex">\(\pi\)</span></h1>
+<p>Monte Carlo simulations are a powerful way to estimate values using randomness. One of the most elegant examples is estimating <span class="arithmatex">\(\pi\)</span> through geometric probability. This project explores two classic methods: the <strong>circle-based approach</strong> and <strong>Buffon’s Needle experiment</strong>.</p>
+<hr/>
+<h2 id="1-circle-based-method">1. Circle-Based Method</h2>
+<h3 id="theoretical-foundation">Theoretical Foundation</h3>
+<p>A unit circle is inscribed within a square of side length 2 (extending from -1 to 1 in both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions). We randomly generate points inside the square and calculate the fraction that falls within the circle.</p>
+<ul>
+<li>Area of the square: <span class="arithmatex">\(4\)</span></li>
+<li>Area of the circle: <span class="arithmatex">\(\pi\)</span></li>
+</ul>
+<p>The probability a point lands inside the circle is:</p>
+<div class="arithmatex">\[
+P = \frac{\text{Area of circle}}{\text{Area of square}} = \frac{\pi}{4}
+\]</div>
+<p>Thus, <span class="arithmatex">\(\pi\)</span> can be estimated by:</p>
+<div class="arithmatex">\[
+\pi \approx 4 \cdot \frac{\text{points inside the circle}}{\text{total points}}
+\]</div>
+<h3 id="convergence-analysis">Convergence Analysis</h3>
+<ul>
+<li>This method has a convergence rate of <span class="arithmatex">\(\mathcal{O}(1/\sqrt{n})\)</span>.</li>
+<li>To achieve approximately <strong>2 correct decimal digits</strong>, we typically need around <strong>10,000 points</strong>.</li>
+<li>Accuracy improves slowly: even with <strong>1,000,000 points</strong>, the estimate might only stabilize to <strong>4 correct digits</strong>.</li>
+</ul>
+<h3 id="visualization-notes">Visualization Notes</h3>
+<ul>
+<li>Points are plotted with two colors: inside the circle (e.g., blue) and outside (e.g., red).</li>
+<li>The visual clearly illustrates how the density inside the circle relates to the estimate of <span class="arithmatex">\(\pi\)</span>.</li>
+<li>A <strong>convergence graph</strong> (<span class="arithmatex">\(\pi\)</span> estimate vs number of points) shows how the estimate fluctuates and stabilizes with more samples.</li>
+</ul>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p><img alt="alt text" src="../image-5.png"/></p>
+<hr/>
+<h2 id="2-buffons-needle">2. Buffon’s Needle</h2>
+<h3 id="theoretical-foundation_1">Theoretical Foundation</h3>
+<p>This classical probability problem involves dropping a needle of length <span class="arithmatex">\(L\)</span> on a plane with equally spaced parallel lines a distance <span class="arithmatex">\(d\)</span> apart (with <span class="arithmatex">\(L \leq d\)</span>).</p>
+<p>The probability the needle crosses a line is:</p>
+<div class="arithmatex">\[
+P = \frac{2L}{\pi d}
+\]</div>
+<p>Rearranged to estimate <span class="arithmatex">\(\pi\)</span>:</p>
+<div class="arithmatex">\[
+\pi \approx \frac{2L \cdot N}{d \cdot C}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(N\)</span> is the number of throws  </li>
+<li><span class="arithmatex">\(C\)</span> is the number of crossings</li>
+</ul>
+<h3 id="convergence-analysis_1">Convergence Analysis</h3>
+<ul>
+<li>This method <strong>converges even more slowly</strong> than the circle-based method.</li>
+<li>The estimate is <strong>highly variable</strong>, especially when crossings are rare (e.g., short needle, few drops).</li>
+<li>Often requires <strong>hundreds of thousands of throws</strong> to produce a decent estimate.</li>
+</ul>
+<p>Still, it's historically significant and a clever geometric trick to estimate <span class="arithmatex">\(\pi\)</span> <strong>without geometry per se</strong>.</p>
+<h3 id="visualization-notes_1">Visualization Notes</h3>
+<ul>
+<li>The needle's position and orientation are shown relative to the lines.</li>
+<li>Needles that cross a line are colored differently (e.g., red), offering a clear visual of successful "hits".</li>
+<li>The visual offers <strong>intuition into the randomness and rare event behavior</strong> that drives this method.</li>
+</ul>
+<p><img alt="alt text" src="../image-6.png"/></p>
+<p><img alt="alt text" src="../image-7.png"/></p>
+<hr/>
+<h2 id="3-summary-comparison">3. Summary Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Accuracy per 10,000 samples</th>
+<th>Convergence Rate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circle-Based</td>
+<td>≈ 2 decimal digits</td>
+<td><span class="arithmatex">\(\mathcal{O}(1/\sqrt{n})\)</span></td>
+<td>Simple, stable, and easy to visualize</td>
+</tr>
+<tr>
+<td>Buffon’s Needle</td>
+<td>≈ 1 digit or less</td>
+<td>Slower, high variance</td>
+<td>Elegant idea, but inefficient for estimation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-python-simulation">4. Python Simulation</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# === Circle-Based Method ===
+
+def estimate_pi_circle(num_points):
+    x = np.random.uniform(-1, 1, num_points)
+    y = np.random.uniform(-1, 1, num_points)
+    inside = x**2 + y**2 &lt;= 1
+    pi_estimate = 4 * np.sum(inside) / num_points
+    return pi_estimate, x, y, inside
+
+def plot_circle(x, y, inside, num_points, pi_estimate):
+    plt.figure(figsize=(6, 6))
+    plt.scatter(x[inside], y[inside], s=1, label="Inside Circle", alpha=0.6)
+    plt.scatter(x[~inside], y[~inside], s=1, label="Outside Circle", alpha=0.6)
+    plt.gca().set_aspect('equal')
+    plt.title(f"Monte Carlo π Estimate ({num_points} points)\nπ ≈ {pi_estimate:.6f}")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def convergence_circle(trials):
+    estimates = []
+    for n in trials:
+        pi_est, *_ = estimate_pi_circle(n)
+        estimates.append(pi_est)
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(trials, estimates, marker='o', linestyle='-', label="Estimated π")
+    plt.axhline(np.pi, color='red', linestyle='--', label="Actual π")
+    plt.xscale('log')
+    plt.xlabel("Number of Points (log scale)")
+    plt.ylabel("Estimated π")
+    plt.title("Convergence of π Estimate (Circle-Based Method)")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# === Buffon's Needle Method ===
+
+def estimate_pi_buffon(throws, L=1.0, d=1.0):
+    crossings = 0
+    positions = []
+
+    for _ in range(throws):
+        y = np.random.uniform(0, d / 2)
+        theta = np.random.uniform(0, np.pi / 2)
+        if y &lt;= (L / 2) * np.sin(theta):
+            crossings += 1
+        positions.append((y, theta))
+
+    if crossings == 0:
+        return None, positions
+    pi_estimate = (2 * L * throws) / (d * crossings)
+    return pi_estimate, positions
+
+def plot_buffon(positions, pi_estimate, throws, L=1.0, d=1.0):
+    plt.figure(figsize=(6, 6))
+    for y, theta in positions:
+        y1 = y
+        y2 = y - L * np.sin(theta)
+        x2 = L * np.cos(theta)
+        color = 'red' if y2 &lt;= 0 else 'blue'
+        plt.plot([0, x2], [y1, y2], color=color, alpha=0.5)
+
+    for i in range(3):
+        plt.axhline(i * d / 2, color='black', linestyle='--', linewidth=1)
+
+    plt.title(f"Buffon’s Needle Simulation ({throws} drops)\nπ ≈ {pi_estimate:.6f}")
+    plt.gca().set_aspect('equal')
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.grid(True)
+    plt.show()
+
+def convergence_buffon(trials_list, L=1.0, d=1.0):
+    estimates = []
+    for n in trials_list:
+        est, _ = estimate_pi_buffon(n, L, d)
+        estimates.append(est if est else np.nan)
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(trials_list, estimates, marker='o', linestyle='-', label="Estimated π")
+    plt.axhline(np.pi, color='red', linestyle='--', label="Actual π")
+    plt.xscale('log')
+    plt.xlabel("Number of Drops (log scale)")
+    plt.ylabel("Estimated π")
+    plt.title("Convergence of π Estimate (Buffon’s Needle)")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# === Example Usage ===
+
+if __name__ == "__main__":
+    # Circle-Based Simulation
+    num_points = 10000
+    pi_c, x, y, inside = estimate_pi_circle(num_points)
+    plot_circle(x, y, inside, num_points, pi_c)
+
+    # Circle-Based Convergence
+    circle_trials = [10, 100, 1000, 10000, 100000, 500000]
+    convergence_circle(circle_trials)
+
+    # Buffon's Needle Simulation
+    throws = 10000
+    pi_b, positions = estimate_pi_buffon(throws)
+    if pi_b:
+        plot_buffon(positions, pi_b, throws)
+
+    # Buffon's Needle Convergence
+    buffon_trials = [100, 1000, 5000, 10000, 50000, 100000, 500000]
+    convergence_buffon(buffon_trials)
+</code></pre>
+<h2 id="my-colab-canliy961">My Colab (Canliy961)</h2>
+<p><a href="https://colab.research.google.com/drive/13dwnTHx8kgy4O_amv0WyQMuZKYwJWa5I#scrollTo=WXglcEKziNq6">Monte Carlo Method</a></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
