@@ -143,4 +143,4 @@ This experiment effectively measures the gravitational acceleration with decent 
 
 ## My Colab (Canliy961)
 
-[Measuring Earth's Gravitational Acceleration](https://colab.research.google.com/drive/1tXh7-1Dlv1jVkg5xT4q6p5ik7yRYPwdB#scrollTo=PEimH_Hpqt-Z)
+[Measurements](https://colab.research.google.com/drive/1tXh7-1Dlv1jVkg5xT4q6p5ik7yRYPwdB#scrollTo=PEimH_Hpqt-Z)
