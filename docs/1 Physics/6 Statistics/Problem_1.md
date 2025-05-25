@@ -49,9 +49,11 @@ This visually demonstrates how the CLT works in practice.
 
 According to the CLT, the variance of the sample mean decreases as the sample size increases:
 
+$$
 \[
 \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
 \]
+$$
 
 This means that:
 
