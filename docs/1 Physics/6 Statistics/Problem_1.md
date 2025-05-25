@@ -23,11 +23,11 @@ From each population, we will:
 ### What Is a Sample Mean?
 
 The sample mean (average) of a sample of size $n$ is given by:
-
+$
 \[
 \bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
 \]
-
+$
 We will repeat the sampling process many times (e.g., 1,000 times per sample size) to build a sampling distribution of the sample mean.
 
 ---
