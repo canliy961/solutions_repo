@@ -50,6 +50,10 @@ Measured length from suspension point to center of mass of the weight:
 - Uncertainty in mean time:  
   $$\Delta T_{10} = \frac{0.027}{\sqrt{10}} \approx 0.0085 \ \text{s}$$
 
+![alt text](image.png)
+
+![alt text](image-1.png)
+
 ---
 
 ## Calculations
@@ -136,10 +140,6 @@ The result is within 0.9% of the standard value — reasonably accurate.
 ## Conclusion
 
 This experiment effectively measures the gravitational acceleration with decent accuracy. The dominant uncertainty arises from timing, reinforcing the importance of reducing human error through averaging and repeat trials.
-
-![alt text](image.png)
-
-![alt text](image-1.png)
 
 ## My Colab (Canliy961)
 
