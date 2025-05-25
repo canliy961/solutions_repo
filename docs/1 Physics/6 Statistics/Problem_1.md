@@ -1,7 +1,7 @@
 # Problem 1
 # Central Limit Theorem (CLT) – Simulation and Analysis
 
-## Population Distributions Used
+## 1. Population Distributions Used
 
 We will use three types of distributions to represent different population shapes:
 
@@ -13,7 +13,7 @@ Each population will consist of a large number of data points (e.g., 100,000 val
 
 ---
 
-## Sampling and Sample Means
+## 2. Sampling and Sample Means
 
 From each population, we will:
 
@@ -32,7 +32,7 @@ We will repeat the sampling process many times (e.g., 1,000 times per sample siz
 
 ---
 
-## Visualization of Sampling Distributions
+## 3. Visualization of Sampling Distributions
 
 We will plot histograms of sample means for each sample size. As the sample size increases:
 
@@ -43,7 +43,7 @@ This visually demonstrates how the CLT works in practice.
 
 ---
 
-## Effect of Sample Size on Spread
+## 4. Effect of Sample Size on Spread
 
 According to the CLT, the variance of the sample mean decreases as the sample size increases:
 
@@ -60,7 +60,7 @@ We will plot how the variance of the sample means changes with different sample 
 
 ---
 
-## Reflections and Real-World Applications
+## 5. Reflections and Real-World Applications
 
 Why is the Central Limit Theorem so important?
 
@@ -79,7 +79,7 @@ Why is the Central Limit Theorem so important?
 
 ---
 
-## Python Simulation
+## 6. Python Simulation
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -168,7 +168,7 @@ plot_variance_change(binom_samples, "Binomial")
 
 ---
 
-## Summary and Conclusion
+## 7. Summary and Conclusion
 
 - The Central Limit Theorem holds regardless of the original population shape — even if it is skewed or discrete.
 - Symmetric populations (e.g., uniform, binomial) converge to normality faster.
