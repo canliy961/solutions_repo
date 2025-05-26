@@ -172,322 +172,138 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="pendulum-experiment-measuring-earths-gravitational-acceleration">Pendulum Experiment: Measuring Earth's Gravitational Acceleration</h1>
-<h1 id="experiment-measuring-acceleration-due-to-gravity-using-a-phone-charger-as-a-pendulum">Experiment: Measuring Acceleration Due to Gravity Using a Phone Charger as a Pendulum</h1>
+<h1 id="measuring-earths-gravitational-acceleration-using-a-pendulum">Measuring Earth's Gravitational Acceleration Using a Pendulum</h1>
 <h2 id="objective">Objective</h2>
-<p>To measure the acceleration due to gravity <span class="arithmatex">\(g\)</span> using a simple pendulum setup made from a phone charger cable and a small object.</p>
+<p>To determine the acceleration due to gravity <span class="arithmatex">\(g\)</span> by measuring the oscillation period of a simple pendulum made from a phone charger cable, and analyzing the uncertainties in measurement. This experiment reinforces the relationship between pendulum length and period and emphasizes real-world experimental practice.</p>
 <hr/>
-<h2 id="materials-needed">Materials Needed</h2>
+<h2 id="background-theory">Background Theory</h2>
+<p>The motion of a simple pendulum (for small angles <span class="arithmatex">\(\theta &lt; 15^\circ\)</span>) is described by the equation:</p>
+<div class="arithmatex">\[T = 2\pi \sqrt{\frac{L}{g}}\]</div>
+<p>Where:<br/>
+- <span class="arithmatex">\(T\)</span> is the period of one oscillation (in seconds)<br/>
+- <span class="arithmatex">\(L\)</span> is the length of the pendulum (in meters)<br/>
+- <span class="arithmatex">\(g\)</span> is the acceleration due to gravity (in m/s²)  </p>
+<p>Rearranged to solve for <span class="arithmatex">\(g\)</span>:</p>
+<div class="arithmatex">\[g = \frac{4\pi^2 L}{T^2}\]</div>
+<hr/>
+<h2 id="apparatus-and-materials">Apparatus and Materials</h2>
 <ul>
-<li>Phone charger cable (approx. 1 meter or more)  </li>
-<li>Small object as a weight (e.g., metal key, padlock, USB adapter)  </li>
-<li>Ruler or tape measure (1 mm resolution preferred)  </li>
-<li>Smartphone stopwatch or timer  </li>
-<li>Hook, doorknob, or shelf to suspend the pendulum  </li>
-<li>Notebook or notes app to record time  </li>
+<li>Phone charger cable (approx. 0.6 meters)  </li>
+<li>Small weight (e.g., USB adapter or key)  </li>
+<li>Tape measure with 1 mm resolution (3 m long)  </li>
+<li>Smartphone stopwatch  </li>
+<li>Wall-mounted nail to suspend the pendulum  </li>
 </ul>
 <hr/>
 <h2 id="procedure">Procedure</h2>
 <h3 id="1-setup">1. Setup</h3>
 <ul>
-<li>Tie the small object securely to the end of the phone charger.  </li>
-<li>Hang the other end from a fixed support so the object can swing freely.  </li>
-<li>Measure the length <span class="arithmatex">\(L\)</span> from the suspension point to the center of mass of the object.  </li>
-<li>Example: <span class="arithmatex">\(L = 1.02 \ \text{m}\)</span></li>
-<li>Estimate the uncertainty:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta L = \frac{\text{ruler resolution}}{2} = \frac{0.001}{2} = 0.0005 \ \text{m}\)</span>\)</span></li>
-</ul>
-<hr/>
-<h3 id="2-data-collection">2. Data Collection</h3>
-<ul>
-<li>Pull the weight back gently (angle &lt; 15°) and release.  </li>
-<li>Start timing as it swings forward — count <strong>10 complete oscillations</strong>.  </li>
-<li>Repeat this process 10 times, recording each result as <span class="arithmatex">\(T_{10}\)</span>.  </li>
-</ul>
-<hr/>
-<h2 id="data-table">Data Table</h2>
-<table>
-<thead>
-<tr>
-<th>Trial</th>
-<th>Time for 10 Oscillations <span class="arithmatex">\(T_{10}\)</span> (s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>19.42</td>
-</tr>
-<tr>
-<td>2</td>
-<td>19.25</td>
-</tr>
-<tr>
-<td>3</td>
-<td>18.78</td>
-</tr>
-<tr>
-<td>4</td>
-<td>18.58</td>
-</tr>
-<tr>
-<td>5</td>
-<td>18.95</td>
-</tr>
-<tr>
-<td>6</td>
-<td>19.50</td>
-</tr>
-<tr>
-<td>7</td>
-<td>19.43</td>
-</tr>
-<tr>
-<td>8</td>
-<td>19.62</td>
-</tr>
-<tr>
-<td>9</td>
-<td>19.93</td>
-</tr>
-<tr>
-<td>10</td>
-<td>19.43</td>
-</tr>
-</tbody>
-</table>
-<hr/>
-<h2 id="what-youll-calculate">What You’ll Calculate</h2>
-<h3 id="1-mean-time">1. Mean time:</h3>
-<div class="arithmatex">\[\overline{T_{10}} = \frac{1}{10} \sum_{i=1}^{10} T_{10,i} = 19.389 \ \text{s}\]</div>
-<h3 id="2-standard-deviation">2. Standard deviation:</h3>
-<div class="arithmatex">\[\sigma_T = \sqrt{\frac{1}{n-1} \sum (T_{10,i} - \overline{T_{10}})^2} \approx 0.409 \ \text{s}\]</div>
-<h3 id="3-uncertainty-in-mean-time">3. Uncertainty in mean time:</h3>
-<div class="arithmatex">\[\Delta T_{10} = \frac{\sigma_T}{\sqrt{n}} = \frac{0.409}{\sqrt{10}} \approx 0.129 \ \text{s}\]</div>
-<h3 id="4-period-of-one-oscillation">4. Period of one oscillation:</h3>
-<div class="arithmatex">\[T = \frac{\overline{T_{10}}}{10} = \frac{19.389}{10} = 1.9389 \ \text{s}\]</div>
-<h3 id="5-uncertainty-in-period">5. Uncertainty in period:</h3>
-<div class="arithmatex">\[\Delta T = \frac{\Delta T_{10}}{10} = \frac{0.129}{10} = 0.0129 \ \text{s}\]</div>
-<hr/>
-<h2 id="calculating-g">Calculating <span class="arithmatex">\(g\)</span></h2>
-<h3 id="formula">Formula:</h3>
-<div class="arithmatex">\[g = \frac{4\pi^2 L}{T^2}\]</div>
-<h3 id="substitution">Substitution:</h3>
-<div class="arithmatex">\[g = \frac{4\pi^2 \cdot 1.02}{(1.9389)^2} \approx 10.70 \ \text{m/s}^2\]</div>
-<hr/>
-<h2 id="uncertainty-in-g">Uncertainty in <span class="arithmatex">\(g\)</span></h2>
-<p>Relative uncertainty:
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\Delta g}{g} = \sqrt{\left(\frac{\Delta L}{L} \right)^2 + \left(2 \cdot \frac{\Delta T}{T} \right)^2}\)</span>\)</span></p>
-<p>Substituting:
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\Delta g}{g} = \sqrt{\left(\frac{0.0005}{1.02} \right)^2 + \left(2 \cdot \frac{0.0129}{1.9389} \right)^2} \approx \sqrt{2.4 \times 10^{-7} + 8.9 \times 10^{-5}} \approx 9.5 \times 10^{-3}\)</span>\)</span></p>
-<p>Absolute uncertainty:
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta g \approx 10.70 \cdot 0.0095 \approx 0.10 \ \text{m/s}^2\)</span>\)</span></p>
-<hr/>
-<h2 id="tips-for-accuracy">Tips for Accuracy</h2>
-<ul>
-<li>Use a <strong>video recording</strong> to time oscillations and avoid human reaction error.  </li>
-<li>Measure the string length <strong>from the pivot to the center of mass</strong> of the object.  </li>
-<li>Ensure the charger swings in a <strong>single vertical plane</strong>, not side-to-side.</li>
-</ul>
-<hr/>
-<h2 id="final-result-example">Final Result (Example)</h2>
-<ul>
-<li>Measured gravitational acceleration:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(g = 10.70 \pm 0.10 \ \text{m/s}^2\)</span>\)</span></li>
-</ul>
-<p>This result is slightly higher than the standard value of <span class="arithmatex">\(9.81 \ \text{m/s}^2\)</span>, likely due to timing or amplitude effects. However, it demonstrates how simple tools can yield reasonably accurate results.</p>
-<hr/>
-<h2 id="another-materials-used">ANOTHER Materials Used</h2>
-<ul>
-<li><strong>String</strong>: 1.00 m  </li>
-<li><strong>Small weight</strong>: keychain  </li>
-<li><strong>Stopwatch</strong>: smartphone (resolution = 0.01 s)  </li>
-<li><strong>Ruler</strong>: resolution = 0.001 m (1 mm)</li>
-</ul>
-<hr/>
-<h2 id="procedure_1">Procedure</h2>
-<h3 id="1-measuring-length-l">1. Measuring Length (<span class="arithmatex">\(L\)</span>)</h3>
-<p>Measured length from suspension point to center of mass of the weight:</p>
-<ul>
-<li><span class="arithmatex">\(L = 1.000 \ \text{m}\)</span> </li>
-<li>Ruler resolution: <span class="arithmatex">\(0.001 \ \text{m}\)</span> </li>
+<li>Secure the weight to one end of the charger cable.  </li>
+<li>Hang the charger from a wall-mounted nail.  </li>
+<li>Measure the length <span class="arithmatex">\(L\)</span> from the suspension point to the center of the weight:<br/>
+<span class="arithmatex">\(<span class="arithmatex">\(L = 60.0 \ \text{cm} = 0.600 \ \text{m}\)</span>\)</span> </li>
+<li>Tape measure resolution = 1 mm = 0.001 m  </li>
 <li>Uncertainty in length:<br/>
 <span class="arithmatex">\(<span class="arithmatex">\(\Delta L = \frac{0.001}{2} = 0.0005 \ \text{m}\)</span>\)</span></li>
 </ul>
-<hr/>
-<h3 id="2-time-measurement-10-oscillations">2. Time Measurement: 10 Oscillations</h3>
+<h3 id="2-data-collection">2. Data Collection</h3>
+<ul>
+<li>Displace the pendulum by less than <span class="arithmatex">\(15^\circ\)</span> and release gently.  </li>
+<li>Measure the time for 10 full oscillations (<span class="arithmatex">\(T_{10}\)</span>), and repeat 10 times:</li>
+</ul>
 <table>
 <thead>
 <tr>
 <th>Trial</th>
-<th>Time for 10 Oscillations <span class="arithmatex">\(T_{10}\)</span> (s)</th>
+<th><span class="arithmatex">\(T_{10}\)</span> (s)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td>20.12</td>
+<td>15.59</td>
 </tr>
 <tr>
 <td>2</td>
-<td>20.18</td>
+<td>15.53</td>
 </tr>
 <tr>
 <td>3</td>
-<td>20.16</td>
+<td>15.60</td>
 </tr>
 <tr>
 <td>4</td>
-<td>20.11</td>
+<td>15.69</td>
 </tr>
 <tr>
 <td>5</td>
-<td>20.20</td>
+<td>15.52</td>
 </tr>
 <tr>
 <td>6</td>
-<td>20.13</td>
+<td>15.52</td>
 </tr>
 <tr>
 <td>7</td>
-<td>20.14</td>
+<td>15.70</td>
 </tr>
 <tr>
 <td>8</td>
-<td>20.17</td>
+<td>15.62</td>
 </tr>
 <tr>
 <td>9</td>
-<td>20.15</td>
+<td>15.49</td>
 </tr>
 <tr>
 <td>10</td>
-<td>20.16</td>
+<td>15.59</td>
 </tr>
 </tbody>
 </table>
-<hr/>
-<h2 id="data-summary">Data Summary</h2>
-<ul>
-<li>
-<p>Mean time for 10 oscillations:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\overline{T_{10}} = 20.152 \ \text{s}\)</span>\)</span></p>
-</li>
-<li>
-<p>Standard deviation:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\sigma_T = 0.027 \ \text{s}\)</span>\)</span></p>
-</li>
-<li>
-<p>Uncertainty in mean time:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta T_{10} = \frac{0.027}{\sqrt{10}} \approx 0.0085 \ \text{s}\)</span>\)</span></p>
-</li>
-</ul>
-<p><img alt="alt text" src="../image.png"/></p>
-<p><img alt="alt text" src="../image-1.png"/></p>
 <hr/>
 <h2 id="calculations">Calculations</h2>
-<h3 id="1-period-and-its-uncertainty">1. Period and Its Uncertainty</h3>
-<ul>
-<li>
-<p>Period of one oscillation:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(T = \frac{20.152}{10} = 2.0152 \ \text{s}\)</span>\)</span></p>
-</li>
-<li>
-<p>Uncertainty in period:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta T = \frac{0.0085}{10} = 0.00085 \ \text{s}\)</span>\)</span></p>
-</li>
-</ul>
+<h3 id="mean-time-for-10-oscillations">Mean time for 10 oscillations:</h3>
+<div class="arithmatex">\[\overline{T_{10}} = 15.58 \ \text{s}\]</div>
+<h3 id="standard-deviation">Standard deviation:</h3>
+<div class="arithmatex">\[\sigma_T = 0.07 \ \text{s}\]</div>
+<h3 id="uncertainty-in-t_10">Uncertainty in <span class="arithmatex">\(T_{10}\)</span>:</h3>
+<div class="arithmatex">\[\Delta T_{10} = \frac{0.07}{\sqrt{10}} = 0.022 \ \text{s}\]</div>
+<h3 id="period-of-one-oscillation">Period of one oscillation:</h3>
+<div class="arithmatex">\[T = \frac{\overline{T_{10}}}{10} = \frac{15.58}{10} = 1.558 \ \text{s}\]</div>
+<h3 id="uncertainty-in-period">Uncertainty in period:</h3>
+<div class="arithmatex">\[\Delta T = \frac{0.022}{10} = 0.0022 \ \text{s}\]</div>
+<h3 id="calculated-gravitational-acceleration">Calculated gravitational acceleration:</h3>
+<div class="arithmatex">\[g = \frac{4\pi^2 \cdot 0.6}{(1.558)^2} \approx 9.75 \ \text{m/s}^2\]</div>
 <hr/>
-<h3 id="2-calculating-g">2. Calculating <span class="arithmatex">\(g\)</span></h3>
-<p>Using the pendulum formula:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(g = \frac{4\pi^2 L}{T^2}\)</span>\)</span></p>
-<p>Substitute values:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(g = \frac{4\pi^2 (1.000)}{(2.0152)^2} \approx 9.719 \ \text{m/s}^2\)</span>\)</span></p>
+<h2 id="uncertainty-in-g">Uncertainty in <span class="arithmatex">\(g\)</span></h2>
+<p>Relative uncertainty:</p>
+<div class="arithmatex">\[
+\frac{\Delta g}{g} = \sqrt{\left( \frac{\Delta L}{L} \right)^2 + \left( 2 \cdot \frac{\Delta T}{T} \right)^2}
+= \sqrt{ \left( \frac{0.0005}{0.6} \right)^2 + \left( 2 \cdot \frac{0.0022}{1.558} \right)^2 }
+\]</div>
+<div class="arithmatex">\[
+\approx \sqrt{6.94 \times 10^{-7} + 7.98 \times 10^{-5}} \approx 0.0031
+\]</div>
+<p>Absolute uncertainty:</p>
+<div class="arithmatex">\[
+\Delta g = 0.0031 \cdot 9.75 \approx 0.03 \ \text{m/s}^2
+\]</div>
 <hr/>
-<h3 id="3-uncertainty-in-g">3. Uncertainty in <span class="arithmatex">\(g\)</span></h3>
-<p>Relative uncertainty in <span class="arithmatex">\(g\)</span>:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\Delta g}{g} = \sqrt{\left(\frac{\Delta L}{L} \right)^2 + \left(2 \cdot \frac{\Delta T}{T} \right)^2}\)</span>\)</span></p>
-<p>Substitute values:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\Delta g}{g} = \sqrt{\left(\frac{0.0005}{1.000} \right)^2 + \left(2 \cdot \frac{0.00085}{2.0152} \right)^2}\)</span>\)</span></p>
-<div class="arithmatex">\[\frac{\Delta g}{g} \approx \sqrt{2.5 \times 10^{-7} + 7.1 \times 10^{-7}} \approx 9.6 \times 10^{-7}\]</div>
-<ul>
-<li>Absolute uncertainty in <span class="arithmatex">\(g\)</span>:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\Delta g \approx 0.00098 \cdot 9.719 \approx 0.0095 \ \text{m/s}^2\)</span>\)</span></li>
-</ul>
-<p><img alt="alt text" src="../image-4.png"/></p>
-<hr/>
-<h2 id="final-results">Final Results</h2>
-<table>
-<thead>
-<tr>
-<th>Quantity</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Length <span class="arithmatex">\(L\)</span></td>
-<td><span class="arithmatex">\(1.000 \ \text{m}\)</span></td>
-</tr>
-<tr>
-<td>Uncertainty <span class="arithmatex">\(\Delta L\)</span></td>
-<td><span class="arithmatex">\(0.0005 \ \text{m}\)</span></td>
-</tr>
-<tr>
-<td>Mean <span class="arithmatex">\(T_{10}\)</span></td>
-<td><span class="arithmatex">\(20.152 \ \text{s}\)</span></td>
-</tr>
-<tr>
-<td>Std Dev <span class="arithmatex">\(\sigma_T\)</span></td>
-<td><span class="arithmatex">\(0.027 \ \text{s}\)</span></td>
-</tr>
-<tr>
-<td>Uncertainty <span class="arithmatex">\(\Delta T_{10}\)</span></td>
-<td><span class="arithmatex">\(0.0085 \ \text{s}\)</span></td>
-</tr>
-<tr>
-<td>Period <span class="arithmatex">\(T\)</span></td>
-<td><span class="arithmatex">\(2.0152 \ \text{s}\)</span></td>
-</tr>
-<tr>
-<td>Uncertainty <span class="arithmatex">\(\Delta T\)</span></td>
-<td><span class="arithmatex">\(0.00085 \ \text{s}\)</span></td>
-</tr>
-<tr>
-<td>Calculated <span class="arithmatex">\(g\)</span></td>
-<td><span class="arithmatex">\(9.719 \ \text{m/s}^2\)</span></td>
-</tr>
-<tr>
-<td>Uncertainty <span class="arithmatex">\(\Delta g\)</span></td>
-<td><span class="arithmatex">\(\pm 0.010 \ \text{m/s}^2\)</span></td>
-</tr>
-</tbody>
-</table>
+<h2 id="final-result">Final Result</h2>
+<div class="arithmatex">\[
+g = 9.75 \pm 0.03 \ \text{m/s}^2
+\]</div>
 <hr/>
 <h2 id="discussion">Discussion</h2>
-<h3 id="1-comparison-with-standard-g-981-textms2">1. Comparison with Standard <span class="arithmatex">\(g = 9.81 \ \text{m/s}^2\)</span></h3>
 <ul>
-<li>Measured value: <span class="arithmatex">\(g = 9.719 \pm 0.010 \ \text{m/s}^2\)</span> </li>
-<li>Difference: <span class="arithmatex">\(9.81 - 9.719 = 0.091 \ \text{m/s}^2\)</span> </li>
-<li>Percentage error:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{0.091}{9.81} \times 100\% \approx 0.93\%\)</span>\)</span></li>
+<li>The measured value is within <strong>0.6%</strong> of the accepted standard <span class="arithmatex">\(g = 9.81 \ \text{m/s}^2\)</span>.</li>
+<li><strong>Timing uncertainty</strong> (reaction delay, stopwatch resolution) is the dominant source of error.</li>
+<li>Using a <strong>shorter pendulum</strong> (0.6 m) increases sensitivity to timing error compared to longer pendulums, affecting precision.</li>
 </ul>
-<p>The result is within 0.9% of the standard value — reasonably accurate.</p>
-<h3 id="2-uncertainty-sources-and-impact">2. Uncertainty Sources and Impact</h3>
-<ul>
-<li><strong>Length Measurement (<span class="arithmatex">\(\Delta L\)</span>)</strong>: Very small due to high ruler resolution — negligible effect.  </li>
-<li><strong>Timing Uncertainty (<span class="arithmatex">\(\Delta T\)</span>)</strong>: Main contributor to error. Human reaction time (~0.1s) is reduced by averaging over 10 oscillations.</li>
-</ul>
-<p><strong>Assumptions:</strong></p>
-<ul>
-<li>Small-angle approximation (&lt;15°) holds.  </li>
-<li>No air resistance or friction considered.  </li>
-<li>Mass of the string is negligible.</li>
-</ul>
-<p><img alt="alt text" src="../image-3.png"/></p>
 <hr/>
 <h2 id="conclusion">Conclusion</h2>
-<p>This experiment effectively measures the gravitational acceleration with decent accuracy. The dominant uncertainty arises from timing, reinforcing the importance of reducing human error through averaging and repeat trials.</p>
+<p>This experiment demonstrates that a basic setup using household items can produce a fairly accurate value for <span class="arithmatex">\(g\)</span>, emphasizing the importance of repeated measurements and error analysis.</p>
 <h2 id="my-colab-canliy961">My Colab (Canliy961)</h2>
 <p><a href="https://colab.research.google.com/drive/1tXh7-1Dlv1jVkg5xT4q6p5ik7yRYPwdB#scrollTo=PEimH_Hpqt-Z">Measurements</a></p>
 </div>
