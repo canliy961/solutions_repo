@@ -64,6 +64,8 @@ $$g = \frac{4\pi^2 L}{T^2}$$
 | 9     | 15.49        |
 | 10    | 15.59        |
 
+![alt text](image-5.png)
+
 ---
 
 ## Calculations
@@ -120,6 +122,20 @@ $$
 $$
 g = 9.75 \pm 0.03 \ \text{m/s}^2
 $$
+
+I moved the pendulum less than about $15^\circ$. Using my phone timer I made exactly 10 swings. I repeated this 10 times.
+
+| Quantity                  | Value                   |
+|--------------------------|-------------------------|
+| Length $L$               | $0.600 \ \text{m}$      |
+| Uncertainty $\Delta L$   | $0.0005 \ \text{m}$     |
+| Mean $T_{10}$            | $15.580 \ \text{s}$     |
+| Std Dev $\sigma_T$       | $0.066 \ \text{s}$      |
+| Uncertainty $\Delta T_{10}$ | $0.021 \ \text{s}$   |
+| Period $T$               | $1.558 \ \text{s}$      |
+| Uncertainty $\Delta T$   | $0.0021 \ \text{s}$     |
+| Calculated $g$           | $9.750 \ \text{m/s}^2$  |
+| Uncertainty $\Delta g$   | $\pm 0.030 \ \text{m/s}^2$ |
 
 ---
 
