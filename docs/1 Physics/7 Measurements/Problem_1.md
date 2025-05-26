@@ -117,7 +117,7 @@ This result is slightly higher than the standard value of $9.81 \ \text{m/s}^2$,
 
 ---
 
-## Materials Used
+## ANOTHER Materials Used
 - **String**: 1.00 m  
 - **Small weight**: keychain  
 - **Stopwatch**: smartphone (resolution = 0.01 s)  
