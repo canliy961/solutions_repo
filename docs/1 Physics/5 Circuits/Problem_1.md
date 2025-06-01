@@ -57,8 +57,8 @@ This plot includes:
 This version:
 
 - **Keeps all nodes visible** for clarity.
-- **Highlights the new** $ B \rightarrow \text{END} $ **path in red**.
-- **Updates the resistance to** $ 4.24\,\Omega $  
+- **Highlights the new** $B \rightarrow \text{END}$ **path in red**.
+- **Updates the resistance to** $4.24\,\Omega$  
   (resulting from the parallel combination of two paths: $4\,\Omega + 5\,\Omega$ and a direct $8\,\Omega$ connection).
 
 ![alt text](image-6.png)
@@ -67,8 +67,8 @@ This version:
 
 This is the result of:
 
-- $ A \rightarrow B = 3\,\Omega $
-- $ B \rightarrow \text{END} \approx 4.24\,\Omega $ (from Step 2)
+- $A \rightarrow B = 3\,\Omega$
+- $B \rightarrow \text{END} \approx 4.24\,\Omega$ (from Step 2)
 
 So:
 
@@ -82,8 +82,8 @@ $$
 
 It results from the **parallel combination** of:
 
-- $ A \rightarrow \text{END} = 7.24\,\Omega $ (from Step 3)
-- $ A \rightarrow C \rightarrow \text{END} = 6 + 5 = 11\,\Omega $
+- $A \rightarrow \text{END} = 7.24\,\Omega$ (from Step 3)
+- $A \rightarrow C \rightarrow \text{END} = 6 + 5 = 11\,\Omega$
 
 Using the parallel formula:
 
@@ -170,3 +170,6 @@ Network simplified into a **single edge** between $\text{START}$ and $\text{END}
 
 **Total equivalent resistance** $\approx 10.2\,\Omega$
 
+## My Colab (Canliy961)
+
+[Equivalent Resistance](https://colab.research.google.com/drive/1WQOjRSSeJFwXCIz9FGuK2AYQrQzfH3Tc#scrollTo=aX2vbhOwus2n)
