@@ -201,6 +201,45 @@ R_{eq} = R_1 + R_2
 R_{eq} = \left( \frac{1}{R_1} + \frac{1}{R_2} \right)^{-1}
 \]</div>
 <p>Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.</p>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p>This plot includes:</p>
+<ul>
+<li><strong>6 resistors</strong> with specified values (in $ \Omega $).</li>
+<li><strong>Clear node positions and labels</strong> for all junctions.</li>
+<li>A <strong>title</strong> indicating it's <strong>Step 1</strong>.</li>
+</ul>
+<p><img alt="alt text" src="../image-5.png"/></p>
+<p>This version:</p>
+<ul>
+<li><strong>Keeps all nodes visible</strong> for clarity.</li>
+<li><strong>Highlights the new</strong> $ B \rightarrow \text{END} $ <strong>path in red</strong>.</li>
+<li><strong>Updates the resistance to</strong> $ 4.24\,\Omega $<br/>
+  (resulting from the parallel combination of two paths: <span class="arithmatex">\(4\,\Omega + 5\,\Omega\)</span> and a direct <span class="arithmatex">\(8\,\Omega\)</span> connection).</li>
+</ul>
+<p><img alt="alt text" src="../image-6.png"/></p>
+<p><strong>Why 7.24 Ω?</strong></p>
+<p>This is the result of:</p>
+<ul>
+<li>$ A \rightarrow B = 3\,\Omega $</li>
+<li>$ B \rightarrow \text{END} \approx 4.24\,\Omega $ (from Step 2)</li>
+</ul>
+<p>So:</p>
+<div class="arithmatex">\[
+R_{A \rightarrow B \rightarrow \text{END}} = 3 + 4.24 = 7.24\,\Omega
+\]</div>
+<p><img alt="alt text" src="../image-7.png"/></p>
+<p><strong>Why 4.36 Ω?</strong></p>
+<p>It results from the <strong>parallel combination</strong> of:</p>
+<ul>
+<li>$ A \rightarrow \text{END} = 7.24\,\Omega $ (from Step 3)</li>
+<li>$ A \rightarrow C \rightarrow \text{END} = 6 + 5 = 11\,\Omega $</li>
+</ul>
+<p>Using the parallel formula:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{eq}} = \frac{1}{7.24} + \frac{1}{11} \approx 0.229
+\quad \Rightarrow \quad
+R_{eq} \approx 4.36\,\Omega
+\]</div>
 <h2 id="task-description">Task Description</h2>
 <h3 id="choose-one">Choose One:</h3>
 <p><strong>Option 1: Simplified Task – Algorithm Description</strong></p>
