@@ -172,6 +172,94 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h1>
+<h2 id="introduction-and-motivation">Introduction and Motivation</h2>
+<p>Calculating equivalent resistance is a fundamental task in electrical circuit analysis. Traditionally, this is done by simplifying series and parallel connections step by step. However, as circuits grow in complexity—with many nested or cyclic components—these methods become less efficient and prone to error.</p>
+<p>By applying graph theory, we gain a structured and scalable approach to simplifying resistor networks. Each resistor is modeled as a weighted edge in a graph, and nodes represent circuit junctions. The total resistance between two terminals is then reduced algorithmically, leveraging insights from graph traversal and reduction.</p>
+<p>This method is not only more efficient for computational tools but also provides a deeper understanding of the interconnectivity and structure within circuits.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this task, you should be able to:</p>
+<ul>
+<li>Represent a resistor network as a graph.</li>
+<li>Identify and reduce series and parallel resistor combinations using graph-based methods.</li>
+<li>Understand and implement a simplification algorithm that handles arbitrary circuit complexity.</li>
+<li>Apply the algorithm to both simple and complex circuit topologies.</li>
+</ul>
+<h2 id="theory-refresher">Theory Refresher</h2>
+<h3 id="series-connection">Series Connection</h3>
+<p>If two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are in series:</p>
+<div class="arithmatex">\[
+R_{eq} = R_1 + R_2
+\]</div>
+<h3 id="parallel-connection">Parallel Connection</h3>
+<p>If two resistors <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are in parallel:</p>
+<div class="arithmatex">\[
+\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}
+\]</div>
+<p>or</p>
+<div class="arithmatex">\[
+R_{eq} = \left( \frac{1}{R_1} + \frac{1}{R_2} \right)^{-1}
+\]</div>
+<p>Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.</p>
+<h2 id="task-description">Task Description</h2>
+<h3 id="choose-one">Choose One:</h3>
+<p><strong>Option 1: Simplified Task – Algorithm Description</strong></p>
+<p>Describe a general-purpose algorithm that calculates equivalent resistance using graph-theoretical principles.</p>
+<p>Include pseudocode for:</p>
+<ul>
+<li>Detecting series and parallel components.</li>
+<li>Iteratively simplifying the network.</li>
+</ul>
+<p>Explain how your algorithm manages nested combinations (e.g., a parallel branch containing a series connection).</p>
+<hr/>
+<p><strong>Option 2: Advanced Task – Full Implementation</strong></p>
+<p>Develop a full implementation in a language such as Python (recommended with <code>networkx</code>).</p>
+<p>Your implementation must:</p>
+<ul>
+<li>Accept a circuit graph as input.</li>
+<li>Handle:</li>
+<li>Series and parallel connections.</li>
+<li>Nested and cyclic structures.</li>
+<li>Output the equivalent resistance between any two terminals.</li>
+</ul>
+<h2 id="expected-deliverables">Expected Deliverables</h2>
+<ul>
+<li>Pseudocode and/or working code.</li>
+<li>Step-by-step walkthrough of 3 sample circuits:</li>
+<li>Pure series</li>
+<li>Pure parallel</li>
+<li>Complex nested configuration</li>
+<li>Discussion of:</li>
+<li>Algorithm correctness</li>
+<li>Efficiency</li>
+<li>Potential enhancements (e.g., use of disjoint-set structures or symbolic resistance handling)</li>
+</ul>
+<h2 id="helpful-hints">Helpful Hints</h2>
+<ul>
+<li>Use graphs: Nodes = junctions, edges = resistors (with resistance as weight).</li>
+<li>Use traversal: Use DFS or BFS to detect series chains or parallel branches.</li>
+<li>Iterate reduction: Collapse detected subgraphs until one equivalent edge remains.</li>
+<li>Check for cycles: Useful for identifying parallel paths.</li>
+<li>Libraries like <code>networkx</code> can significantly speed up development.</li>
+</ul>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p>🔹 <strong>Step 1: Initial Configuration</strong><br/>
+Multiple paths from <strong>START</strong> to <strong>END</strong> via nodes <strong>A</strong>, <strong>B</strong>, and <strong>C</strong>.<br/>
+Resistors span various branches of the graph.</p>
+<p>🔹 <strong>Step 2: Identify Parallel Paths</strong><br/>
+Focus on paths:<br/>
+- $ \text{START} \rightarrow A \rightarrow C $<br/>
+- $ \text{START} \rightarrow B \rightarrow C $  </p>
+<p>These converge at node <span class="arithmatex">\(C\)</span>, forming a <strong>parallel configuration</strong>.</p>
+<p>🔹 <strong>Step 3: Combine to Simplified Path</strong><br/>
+Combine the two paths into <strong>one equivalent resistor</strong> between $ \text{START} $ and $ C $.<br/>
+Then include the resistor from $ C $ to $ \text{END} $.</p>
+<p>🔹 <strong>Step 4: Final Equivalent Resistance</strong><br/>
+Network simplified into a <strong>single edge</strong> between $ \text{START} $ and $ \text{END} $.  </p>
+<p><strong>Total equivalent resistance</strong> $ \approx 10.2\,\Omega $</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
