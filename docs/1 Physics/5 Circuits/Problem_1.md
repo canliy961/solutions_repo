@@ -44,6 +44,55 @@ $$
 
 Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.
 
+![alt text](image-4.png)
+
+This plot includes:
+
+- **6 resistors** with specified values (in $ \Omega $).
+- **Clear node positions and labels** for all junctions.
+- A **title** indicating it's **Step 1**.
+
+![alt text](image-5.png)
+
+This version:
+
+- **Keeps all nodes visible** for clarity.
+- **Highlights the new** $ B \rightarrow \text{END} $ **path in red**.
+- **Updates the resistance to** $ 4.24\,\Omega $  
+  (resulting from the parallel combination of two paths: $4\,\Omega + 5\,\Omega$ and a direct $8\,\Omega$ connection).
+
+![alt text](image-6.png)
+
+**Why 7.24 Ω?**
+
+This is the result of:
+
+- $ A \rightarrow B = 3\,\Omega $
+- $ B \rightarrow \text{END} \approx 4.24\,\Omega $ (from Step 2)
+
+So:
+
+$$
+R_{A \rightarrow B \rightarrow \text{END}} = 3 + 4.24 = 7.24\,\Omega
+$$
+
+![alt text](image-7.png)
+
+**Why 4.36 Ω?**
+
+It results from the **parallel combination** of:
+
+- $ A \rightarrow \text{END} = 7.24\,\Omega $ (from Step 3)
+- $ A \rightarrow C \rightarrow \text{END} = 6 + 5 = 11\,\Omega $
+
+Using the parallel formula:
+
+$$
+\frac{1}{R_{eq}} = \frac{1}{7.24} + \frac{1}{11} \approx 0.229
+\quad \Rightarrow \quad
+R_{eq} \approx 4.36\,\Omega
+$$
+
 ## Task Description
 
 ### Choose One:
