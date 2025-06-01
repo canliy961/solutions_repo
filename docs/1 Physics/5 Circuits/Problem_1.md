@@ -107,17 +107,17 @@ Resistors span various branches of the graph.
 
 🔹 **Step 2: Identify Parallel Paths**  
 Focus on paths:  
-- $ \text{START} \rightarrow A \rightarrow C $  
-- $ \text{START} \rightarrow B \rightarrow C $  
+- $\text{START} \rightarrow A \rightarrow C$  
+- $\text{START} \rightarrow B \rightarrow C$  
 
 These converge at node $C$, forming a **parallel configuration**.
 
 🔹 **Step 3: Combine to Simplified Path**  
-Combine the two paths into **one equivalent resistor** between $ \text{START} $ and $ C $.  
-Then include the resistor from $ C $ to $ \text{END} $.
+Combine the two paths into **one equivalent resistor** between $\text{START}$ and $C$.  
+Then include the resistor from $C$ to $\text{END}$.
 
 🔹 **Step 4: Final Equivalent Resistance**  
-Network simplified into a **single edge** between $ \text{START} $ and $ \text{END} $.  
+Network simplified into a **single edge** between $\text{START}$ and $\text{END}$.  
 
-**Total equivalent resistance** $ \approx 10.2\,\Omega $
+**Total equivalent resistance** $\approx 10.2\,\Omega$
 
