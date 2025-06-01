@@ -48,7 +48,7 @@ Graph theory allows us to detect these configurations algorithmically and apply 
 
 This plot includes:
 
-- **6 resistors** with specified values (in $ \Omega $).
+- **6 resistors** with specified values (in $\Omega$).
 - **Clear node positions and labels** for all junctions.
 - A **title** indicating it's **Step 1**.
 
