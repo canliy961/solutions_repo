@@ -281,24 +281,6 @@ R_{eq} \approx 4.36\,\Omega
 <li>Check for cycles: Useful for identifying parallel paths.</li>
 <li>Libraries like <code>networkx</code> can significantly speed up development.</li>
 </ul>
-<p><img alt="alt text" src="../image.png"/></p>
-<p><img alt="alt text" src="../image-1.png"/></p>
-<p><img alt="alt text" src="../image-2.png"/></p>
-<p><img alt="alt text" src="../image-3.png"/></p>
-<p>🔹 <strong>Step 1: Initial Configuration</strong><br/>
-Multiple paths from <strong>START</strong> to <strong>END</strong> via nodes <strong>A</strong>, <strong>B</strong>, and <strong>C</strong>.<br/>
-Resistors span various branches of the graph.</p>
-<p>🔹 <strong>Step 2: Identify Parallel Paths</strong><br/>
-Focus on paths:<br/>
-- <span class="arithmatex">\(\text{START} \rightarrow A \rightarrow C\)</span><br/>
-- <span class="arithmatex">\(\text{START} \rightarrow B \rightarrow C\)</span> </p>
-<p>These converge at node <span class="arithmatex">\(C\)</span>, forming a <strong>parallel configuration</strong>.</p>
-<p>🔹 <strong>Step 3: Combine to Simplified Path</strong><br/>
-Combine the two paths into <strong>one equivalent resistor</strong> between <span class="arithmatex">\(\text{START}\)</span> and <span class="arithmatex">\(C\)</span>.<br/>
-Then include the resistor from <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(\text{END}\)</span>.</p>
-<p>🔹 <strong>Step 4: Final Equivalent Resistance</strong><br/>
-Network simplified into a <strong>single edge</strong> between <span class="arithmatex">\(\text{START}\)</span> and <span class="arithmatex">\(\text{END}\)</span>.  </p>
-<p><strong>Total equivalent resistance</strong> <span class="arithmatex">\(\approx 10.2\,\Omega\)</span></p>
 <h2 id="my-colab-canliy961">My Colab (Canliy961)</h2>
 <p><a href="https://colab.research.google.com/drive/1WQOjRSSeJFwXCIz9FGuK2AYQrQzfH3Tc#scrollTo=aX2vbhOwus2n">Equivalent Resistance</a></p>
 </div>
