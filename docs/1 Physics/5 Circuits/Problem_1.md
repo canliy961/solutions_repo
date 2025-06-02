@@ -44,7 +44,7 @@ $$
 
 Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.
 
-![alt text](image-8.png)
+![alt text](image-12.png)
 
 This plot includes:
 
