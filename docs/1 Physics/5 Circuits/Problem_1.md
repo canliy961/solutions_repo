@@ -44,7 +44,7 @@ $$
 
 Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.
 
-![alt text](image-4.png)
+![alt text](image-8.png)
 
 This plot includes:
 
@@ -52,7 +52,7 @@ This plot includes:
 - **Clear node positions and labels** for all junctions.
 - A **title** indicating it's **Step 1**.
 
-![alt text](image-5.png)
+![alt text](image-9.png)
 
 This version:
 
@@ -61,7 +61,7 @@ This version:
 - **Updates the resistance to** $4.24\,\Omega$  
   (resulting from the parallel combination of two paths: $4\,\Omega + 5\,\Omega$ and a direct $8\,\Omega$ connection).
 
-![alt text](image-6.png)
+![alt text](image-10.png)
 
 **Why 7.24 Ω?**
 
@@ -76,7 +76,7 @@ $$
 R_{A \rightarrow B \rightarrow \text{END}} = 3 + 4.24 = 7.24\,\Omega
 $$
 
-![alt text](image-7.png)
+![alt text](image-11.png)
 
 **Why 4.36 Ω?**
 
