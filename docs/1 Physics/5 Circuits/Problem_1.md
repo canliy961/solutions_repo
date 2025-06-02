@@ -142,34 +142,6 @@ Your implementation must:
 - Check for cycles: Useful for identifying parallel paths.
 - Libraries like `networkx` can significantly speed up development.
 
-![alt text](image.png)
-
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-
-![alt text](image-3.png)
-
-🔹 **Step 1: Initial Configuration**  
-Multiple paths from **START** to **END** via nodes **A**, **B**, and **C**.  
-Resistors span various branches of the graph.
-
-🔹 **Step 2: Identify Parallel Paths**  
-Focus on paths:  
-- $\text{START} \rightarrow A \rightarrow C$  
-- $\text{START} \rightarrow B \rightarrow C$  
-
-These converge at node $C$, forming a **parallel configuration**.
-
-🔹 **Step 3: Combine to Simplified Path**  
-Combine the two paths into **one equivalent resistor** between $\text{START}$ and $C$.  
-Then include the resistor from $C$ to $\text{END}$.
-
-🔹 **Step 4: Final Equivalent Resistance**  
-Network simplified into a **single edge** between $\text{START}$ and $\text{END}$.  
-
-**Total equivalent resistance** $\approx 10.2\,\Omega$
-
 ## My Colab (Canliy961)
 
 [Equivalent Resistance](https://colab.research.google.com/drive/1WQOjRSSeJFwXCIz9FGuK2AYQrQzfH3Tc#scrollTo=aX2vbhOwus2n)
