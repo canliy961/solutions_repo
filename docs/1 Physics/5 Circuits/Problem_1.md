@@ -50,8 +50,8 @@ Graph theory allows us to detect these configurations algorithmically and apply 
 
 Two paths from **A** to **END**:
 
-- **Path 1**: $ A \rightarrow B \rightarrow \text{END} = 3\,\Omega + 6\,\Omega = 9\,\Omega $
-- **Path 2**: $ A \rightarrow C \rightarrow \text{END} = 4\,\Omega + 12\,\Omega = 16\,\Omega $
+- **Path 1**: $A \rightarrow B \rightarrow \text{END} = 3\,\Omega + 6\,\Omega = 9\,\Omega$
+- **Path 2**: $A \rightarrow C \rightarrow \text{END} = 4\,\Omega + 12\,\Omega = 16\,\Omega$
 
 ---
 
@@ -59,10 +59,10 @@ Two paths from **A** to **END**:
 
 ### Step 1 – Combine Series Resistors
 
-Resistors on $ A \rightarrow B $ and $ B \rightarrow \text{END} $ are in series:
+Resistors on $A \rightarrow B$ and $B \rightarrow \text{END}$ are in series:
 
 $$
-R_{A \rightarrow B \rightarrow \text{END}} = 3 + 6 = 9\,\Omega
+R_{A\rightarrow B\rightarrow \text{END}} = 3 + 6 = 9\,\Omega
 $$
 
 ---
