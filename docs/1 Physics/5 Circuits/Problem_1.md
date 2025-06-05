@@ -44,53 +44,68 @@ $$
 
 Graph theory allows us to detect these configurations algorithmically and apply such reductions iteratively.
 
-![alt text](image-12.png)
+![alt text](image-13.png)
 
-This plot includes:
+### Step 0 – Initial Circuit
 
-- **6 resistors** with specified values (in $\Omega$).
-- **Clear node positions and labels** for all junctions.
-- A **title** indicating it's **Step 1**.
+Two paths from **A** to **END**:
 
-![alt text](image-9.png)
+- **Path 1**: $ A \rightarrow B \rightarrow \text{END} = 3\,\Omega + 6\,\Omega = 9\,\Omega $
+- **Path 2**: $ A \rightarrow C \rightarrow \text{END} = 4\,\Omega + 12\,\Omega = 16\,\Omega $
 
-This version:
+---
 
-- **Keeps all nodes visible** for clarity.
-- **Highlights the new** $B \rightarrow \text{END}$ **path in red**.
-- **Updates the resistance to** $4.24\,\Omega$  
-  (resulting from the parallel combination of two paths: $4\,\Omega + 5\,\Omega$ and a direct $8\,\Omega$ connection).
+![alt text](image-14.png)
 
-![alt text](image-10.png)
+### Step 1 – Combine Series Resistors
 
-**Why 7.24 Ω?**
-
-This is the result of:
-
-- $A \rightarrow B = 3\,\Omega$
-- $B \rightarrow \text{END} \approx 4.24\,\Omega$ (from Step 2)
-
-So:
+Resistors on $ A \rightarrow B $ and $ B \rightarrow \text{END} $ are in series:
 
 $$
-R_{A \rightarrow B \rightarrow \text{END}} = 3 + 4.24 = 7.24\,\Omega
+R_{A \rightarrow B \rightarrow \text{END}} = 3 + 6 = 9\,\Omega
 $$
 
-![alt text](image-11.png)
+---
 
-**Why 4.36 Ω?**
+![alt text](image-15.png)
 
-It results from the **parallel combination** of:
+### Step 2 – Combine Parallel Resistors
 
-- $A \rightarrow \text{END} = 7.24\,\Omega$ (from Step 3)
-- $A \rightarrow C \rightarrow \text{END} = 6 + 5 = 11\,\Omega$
+Now combine the two parallel paths from **A to END**:
 
-Using the parallel formula:
+- One path: $9\,\Omega$
+- Other path: $16\,\Omega$
+
+Use the parallel formula:
 
 $$
-\frac{1}{R_{eq}} = \frac{1}{7.24} + \frac{1}{11} \approx 0.229
+\frac{1}{R_{eq}} = \frac{1}{9} + \frac{1}{16} = \frac{25}{144}
 \quad \Rightarrow \quad
-R_{eq} \approx 4.36\,\Omega
+R_{eq} = \frac{144}{25} \approx 5.76\,\Omega
+$$
+
+---
+
+![alt text](image-16.png)
+
+### Step 3 – Final Series Combination
+
+The path from **START → A** has:
+
+$$
+R_{\text{START} \rightarrow A} = 2\,\Omega
+$$
+
+And from **A → END** we just calculated:
+
+$$
+R_{A \rightarrow \text{END}} = 5.76\,\Omega
+$$
+
+**Final total resistance**:
+
+$$
+R_{\text{total}} = 2 + 5.76 = 7.76\,\Omega
 $$
 
 ## Task Description
